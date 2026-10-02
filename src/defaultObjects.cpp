@@ -1,7 +1,5 @@
 #include "defaultObjects.h"
 
-#include "RE/Offset.h"
-
 namespace DefaultObjects {
 	RE::TESForm* Storage::Get(std::string_view a_key) const
 	{

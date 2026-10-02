@@ -26,8 +26,8 @@
       "name": "windows",
       "hidden": true,
       "cacheVariables": {
-        "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded$<$<CONFIG:Debug>:Debug>",
-        "VCPKG_TARGET_TRIPLET": "x64-windows-static"
+        "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL",
+        "VCPKG_TARGET_TRIPLET": "x64-windows-static-md"
       }
     },
     {

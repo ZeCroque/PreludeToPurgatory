@@ -15,9 +15,9 @@ namespace {
 			return;
 		}
 
-		a_killer->ModActorValue(RE::ActorValue::kHealth, 50.0f);
-		a_killer->ModActorValue(RE::ActorValue::kMagicka, 50.0f);
-		a_killer->ModActorValue(RE::ActorValue::kStamina, 50.0f);
+		a_killer->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kPermanent, RE::ActorValue::kHealth, 50.0f);
+		a_killer->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kPermanent, RE::ActorValue::kMagicka, 50.0f);
+		a_killer->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kPermanent, RE::ActorValue::kStamina, 50.0f);
 		//TODO: This doesn't actually work, possibly because of the ethereal archetype.
 		/*
 		auto* playerMC = a_killer->GetMagicCaster(RE::MagicSystem::CastingSource::kInstant);

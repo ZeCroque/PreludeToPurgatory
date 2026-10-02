@@ -9,13 +9,15 @@
     "spdlog",
     "clib-util",
     "jsoncpp",
-    "xbyak"
-  ],
-  "overrides": [
-    {
-      "name": "fmt",
-      "version": "9.1.0"
-    }
+    "xbyak",
+    "directxmath",
+    "directxtk",
+    "rapidcsv",
+    "simpleini",
+    "toml11",
+    "nlohmann-json",
+    "fmt",
+    "catch2"
   ],
   "builtin-baseline": "b7dba7f9aad09a56900f21cd78cfda1258e54e38"
 }

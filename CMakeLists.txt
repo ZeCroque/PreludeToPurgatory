@@ -7,29 +7,7 @@ set(VERSION 3.0.0 CACHE STRING "")
 option(BUILD_TEST "Sets log level to debug." OFF)
 
 # ---- Cache build vars ----
-macro(set_from_environment VARIABLE)
-	if(NOT DEFINED ${VARIABLE} AND DEFINED ENV{${VARIABLE}})
-		set(${VARIABLE} $ENV{${VARIABLE}})
-	endif()
-endmacro()
-
-macro(find_commonlib_path)
-	if (CommonLibName AND NOT ${CommonLibName} STREQUAL "")
-		# Check path
-		set_from_environment(${CommonLibName}Path)
-		set(CommonLibPath ${${CommonLibName}Path})
-		if (${CommonLibPath} STREQUAL "CommonLibPath-NOTFOUND")
-			#Check extern
-			find_path(CommonLibPath
-			include/REL/Relocation.h
-			PATHS extern/${CommonLibName})
-		endif()
-	endif()
-endmacro()
-
-set_from_environment(VCPKG_ROOT) 
-set(CommonLibName "CommonLibSSE")
-find_commonlib_path()
+set(CommonLibPath "${CMAKE_CURRENT_SOURCE_DIR}/extern/CommonlibSSE")
 set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
 set(VCPKG_TARGET_TRIPLET "x64-windows-static" CACHE STRING "")
 set(Boost_USE_STATIC_RUNTIME OFF CACHE BOOL "")
@@ -84,14 +62,12 @@ set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG OFF)
 set(Boost_USE_STATIC_LIBS ON)
 
 # ---- Dependencies ----
-
-if (DEFINED CommonLibPath AND NOT ${CommonLibPath} STREQUAL "" AND IS_DIRECTORY ${CommonLibPath})
-	add_subdirectory(${CommonLibPath} ${CommonLibName})
-else ()
-	message(
-		FATAL_ERROR
-		"Variable ${CommonLibName} is not set."
-	)
+if(IS_DIRECTORY "${CommonLibPath}")
+	add_subdirectory(${CommonLibPath} "CommonlibSSE")
+else()
+    message(FATAL_ERROR
+        "CommonLibSSE not found at: ${CommonLibPath}"
+    )
 endif()
 
 find_path(CLIB_UTIL_INCLUDE_DIRS "ClibUtil/utils.hpp")
@@ -149,7 +125,7 @@ target_include_directories(
 target_link_libraries(
 	${PROJECT_NAME}
 	PRIVATE
-		${CommonLibName}::${CommonLibName}
+		CommonLibSSE::CommonLibSSE
 		JsonCpp::JsonCpp
 )
 

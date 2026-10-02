@@ -49,11 +49,11 @@ extern "C" DLLEXPORT constinit auto SKSEPlugin_Version = []() {
     v.AuthorName(Version::PROJECT_AUTHOR);
     v.UsesAddressLibrary();
     v.UsesUpdatedStructs();
-    v.CompatibleVersions({ SKSE::RUNTIME_LATEST });
+    v.CompatibleVersions({ SKSE::RUNTIME_SSE_LATEST_AE });
     return v;
     }();
 
-extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_skse) {
+extern "C" DLLEXPORT bool __cdecl SKSEPlugin_Load(const SKSE::LoadInterface* a_skse) {
     SetupLog();
     _loggerInfo("Starting up {}.", Version::NAME);
     _loggerInfo("Plugin Version: {}.", Version::VERSION);
