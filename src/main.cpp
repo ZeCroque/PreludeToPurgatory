@@ -28,11 +28,11 @@ extern "C" DLLEXPORT constinit auto SKSEPlugin_Version = []() {
     v.AuthorName("SeaSparrow");
     v.UsesAddressLibrary();
     v.UsesUpdatedStructs();
-    v.CompatibleVersions({ SKSE::RUNTIME_SSE_LATEST });
+    v.CompatibleVersions({ SKSE::RUNTIME_SSE_LATEST_AE });
     return v;
     }();
 
-SKSE_PLUGIN_LOAD(const SKSE::LoadInterface* a_skse) {
+extern "C" DLLEXPORT bool __cdecl SKSEPlugin_Load(const SKSE::LoadInterface* a_skse) {
     // alloc
     SKSE::InitInfo info{};
     info.hook = true;

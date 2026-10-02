@@ -10,16 +10,15 @@
     "commonlib-shared",
     "fmt",
     "jsoncpp",
-    "rsm-binary-io",
+    "xbyak",
+    "directxmath",
+    "directxtk",
+    "rapidcsv",
     "simpleini",
-    "spdlog",
-    "xbyak"
+    "toml11",
+    "nlohmann-json",
+    "fmt",
+    "catch2"
   ],
-  "builtin-baseline": "89dd0f4d241136b843fb55813b2f0fa6448c204d",
-  "overrides": [
-    {
-      "name": "xbyak",
-      "version": "7.23.1"
-    }
-  ]
+  "builtin-baseline": "b7dba7f9aad09a56900f21cd78cfda1258e54e38"
 }

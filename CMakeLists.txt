@@ -1,4 +1,23 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.21)
+set(PROJECT_AUTHOR "SeaSparrow" CACHE STRING "")
+set(NAME "PreludeToPurgatory" CACHE STRING "")
+set(VERSION 3.0.0 CACHE STRING "")
+
+# ---- Options ----
+option(BUILD_TEST "Sets log level to debug." OFF)
+
+# ---- Cache build vars ----
+set(CommonLibPath "${CMAKE_CURRENT_SOURCE_DIR}/extern/CommonlibSSE")
+set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+set(VCPKG_TARGET_TRIPLET "x64-windows-static" CACHE STRING "")
+set(Boost_USE_STATIC_RUNTIME OFF CACHE BOOL "")
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>" CACHE STRING "")
+
+add_compile_definitions(SKYRIM_AE)
+add_compile_definitions(SKYRIM_SUPPORT_AE)
+if (BUILD_TEST)
+	add_compile_definitions(DEBUG)
+endif()
 
 option(COPY_BSA "Copies any generated BSA to the MO2 directory (if specified)." ON)
 option(COPY_PEX "Copies any generated scripts to the MO2 directory (if specified). Applies after the BSA (if enabled)." ON)
@@ -19,13 +38,36 @@ get_filename_component(
 	ABSOLUTE CACHE
 )
 
-list(APPEND CMAKE_IGNORE_PATH "${PROJECT_BINARY_DIR}")
-list(APPEND CMAKE_MODULE_PATH
-	"${PROJECT_SOURCE_DIR}/tools/SKSE-CMakeModules/Modules"
-)
-list(APPEND CMAKE_MODULE_PATH
-	"${PROJECT_SOURCE_DIR}/tools/Bethesda-CMakeModules/Modules"
-)
+# ---- Include guards ----
+
+if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
+	message(
+		FATAL_ERROR
+			"In-source builds not allowed. Please make a new directory (called a build directory) and run CMake from there."
+	)
+endif()
+
+# ---- Globals ----
+if (MSVC)
+	if (NOT ${CMAKE_GENERATOR} STREQUAL "Ninja")
+		add_compile_options(
+			/MP	# Build with Multiple Processes
+		)
+	endif ()
+endif ()
+
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_DEBUG OFF)
+set(Boost_USE_STATIC_LIBS ON)
+
+# ---- Dependencies ----
+if(IS_DIRECTORY "${CommonLibPath}")
+	add_subdirectory(${CommonLibPath} "CommonlibSSE")
+else()
+    message(FATAL_ERROR
+        "CommonLibSSE not found at: ${CommonLibPath}"
+    )
+endif()
 
 include(SKSEPlugin)
 set(SKSE_USE_XBYAK ON)
@@ -70,6 +112,19 @@ target_include_directories(
 	${PROJECT_NAME}
 	PRIVATE
 		${CLIB_UTIL_INCLUDE_DIRS}
+)
+
+target_link_libraries(
+	${PROJECT_NAME}
+	PRIVATE
+		CommonLibSSE::CommonLibSSE
+		JsonCpp::JsonCpp
+)
+
+target_precompile_headers(
+	${PROJECT_NAME}
+	PRIVATE
+		src/PCH.h
 )
 
 if (MSVC)

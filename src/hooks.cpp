@@ -1,6 +1,5 @@
 #include "hooks.h"
 
-#include "RE/Offset.h"
 #include "defaultObjects.h"
 #include "xbyak/xbyak.h"
 
@@ -31,9 +30,9 @@ namespace Hooks {
 
 	bool HandleSpellCollisions::HandleCollision(RE::Projectile* a_this, RE::TESObjectREFR* a_target, const RE::NiPoint3* arHitLocation, const RE::NiPoint3* arHitNormal, RE::COL_LAYER aeCollisionLayer, unsigned int auiMaterial, BYTE* a7)
 	{
-		auto* shooter = a_this ? a_this->shooter.get().get() : nullptr;
+		auto* shooter = a_this ? a_this->GetProjectileRuntimeData().shooter.get().get() : nullptr;
 		auto* baseProjectile = a_this ? a_this->GetProjectileBase() : nullptr;
-		auto* baseMagic = a_this ? a_this->spell : nullptr;
+		auto* baseMagic = a_this ? a_this->GetProjectileRuntimeData().spell : nullptr;
 		auto* baseSpell = baseMagic ? baseMagic->As<RE::SpellItem>() : nullptr;
 		auto* targetActor = a_target ? a_target->As<RE::Actor>() : nullptr;
 		auto* magickaWeaveEffect = DefaultObjects::ModObject<RE::BGSPerk>("PTP_Entry_PRK_MirrorWeave"sv);
@@ -133,7 +132,7 @@ namespace Hooks {
 			_loggerDebug("  Weapon is silver");
 			return;
 		}
-		auto max = a_this->GetPermanentActorValue(RE::ActorValue::kMagicka) + a_this->magickaModifiers.modifiers[RE::ACTOR_VALUE_MODIFIERS::kTemporary];
+		auto max = a_this->GetPermanentActorValue(RE::ActorValue::kMagicka) + a_this->GetActorRuntimeData().magickaModifiers.modifiers[RE::ACTOR_VALUE_MODIFIERS::kTemporary];
 		auto current = a_this->GetActorValue(RE::ActorValue::kMagicka);
 
 		if (current < (max / 2.0f)) {
