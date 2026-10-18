@@ -11,13 +11,20 @@ namespace {
 			_loggerError("WARNING! Could not resolve wraithform form in ActorDeathListener.");
 			return;
 		}
-		if (!a_killer->HasMagicEffect(wraithformEffect)) {
+		auto* magicTarget = a_killer->AsMagicTarget();
+		if (!magicTarget || !magicTarget->HasMagicEffect(wraithformEffect)) {
 			_loggerDebug("  Actor does not have wraithform effect {}", _debugEDID(wraithformEffect));
 			return;
 		}
-		a_killer->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kDamage, RE::ActorValue::kHealth, 50.0f);
-		a_killer->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kDamage, RE::ActorValue::kMagicka, 50.0f);
-		a_killer->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kDamage, RE::ActorValue::kStamina, 50.0f);
+
+		auto* actorValues = a_killer->AsActorValueOwner();
+		if (!actorValues) {
+			_loggerError("WARNING! Could not resolve ActorValueOwner for Wraithform.");
+			return;
+		}
+		actorValues->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kDamage, RE::ActorValue::kHealth, 50.0f);
+		actorValues->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kDamage, RE::ActorValue::kMagicka, 50.0f);
+		actorValues->ModActorValue(RE::ACTOR_VALUE_MODIFIER::kDamage, RE::ActorValue::kStamina, 50.0f);
 		//TODO: This doesn't actually work, possibly because of the ethereal archetype.
 		/*
 		auto* playerMC = a_killer->GetMagicCaster(RE::MagicSystem::CastingSource::kInstant);

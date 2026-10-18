@@ -12,24 +12,28 @@ namespace Hooks {
 
 	void CombatHit::Install()
 	{
-		auto& trampoline = REL::GetTrampoline();
+		auto& trampoline = SKSE::GetTrampoline();
 		REL::Relocation<std::uintptr_t> target{ REL::ID(38627), 0x4A8 };
 		_originalCall = trampoline.write_call<5>(target.address(), &Hit);
 	}
 
 	void HandleSpellCollisions::Install()
 	{
-		auto& trampoline = REL::GetTrampoline();
-#ifdef GOG // seems like something above was inlined?
-		REL::Relocation<std::uintptr_t> target{ REL::ID(44204), 0x21F };
-#else
-		REL::Relocation<std::uintptr_t> target{ REL::ID(44204), 0x239 };
-#endif
+		auto& trampoline = SKSE::GetTrampoline();
+		if(REL::Module::get().version() >= SKSE::RUNTIME_SSE_1_7_99)
+		{
+			REL::Relocation<std::uintptr_t> target{ REL::ID(44204), 0x239 };
+		}
+		else
+		{
+			REL::Relocation<std::uintptr_t> target{ REL::ID(44204), 0x21F };
+		}
 		_originalCall = trampoline.write_call<5>(target.address(), &HandleCollision);
 	}
 
 	bool HandleSpellCollisions::HandleCollision(RE::Projectile* a_this, RE::TESObjectREFR* a_target, const RE::NiPoint3* arHitLocation, const RE::NiPoint3* arHitNormal, RE::COL_LAYER aeCollisionLayer, unsigned int auiMaterial, BYTE* a7)
 	{
+		_loggerDebug("MirrorWeave:");
 		auto* shooter = a_this ? a_this->GetProjectileRuntimeData().shooter.get().get() : nullptr;
 		auto* baseProjectile = a_this ? a_this->GetProjectileBase() : nullptr;
 		auto* baseMagic = a_this ? a_this->GetProjectileRuntimeData().spell : nullptr;
@@ -38,21 +42,24 @@ namespace Hooks {
 		auto* magickaWeaveEffect = DefaultObjects::ModObject<RE::BGSPerk>("PTP_Entry_PRK_MirrorWeave"sv);
 		auto* retalliationSpell = DefaultObjects::ModObject<RE::SpellItem>("PTP_Entry_SPL_MagickaWeaveRetaliation"sv);
 		auto* lichRace = DefaultObjects::ModObject<RE::TESRace>("NecroLichRace"sv);
-
+		if (!magickaWeaveEffect || !retalliationSpell || !lichRace) {
+			_loggerError("WARNING! Could not resolve default objects for MirrorWeave");
+			return _originalCall(a_this, a_target, arHitLocation, arHitNormal, aeCollisionLayer, auiMaterial, a7);
+		}
 		if (shooter && baseSpell && baseProjectile && targetActor &&
 			targetActor->HasPerk(magickaWeaveEffect) && 
 			targetActor->GetRace() == lichRace &&
-			targetActor->IsWeaponDrawn() &&
 			baseSpell != retalliationSpell) {
-
-			if (!magickaWeaveEffect || !retalliationSpell || !lichRace) {
-				return _originalCall(a_this, a_target, arHitLocation, arHitNormal, aeCollisionLayer, auiMaterial, a7);
-			}
 
 			auto magicka = RE::ActorValue::kMagicka;
 
-			auto currentMagicka = targetActor->GetActorValue(magicka);
-			auto maxMagicka = targetActor->GetPermanentActorValue(magicka);
+			auto* actorValues = targetActor->AsActorValueOwner();
+			if (!actorValues) {
+				_loggerError("Failed to resolve ActorValueOwner for Combat Hit.");
+				return _originalCall(a_this, a_target, arHitLocation, arHitNormal, aeCollisionLayer, auiMaterial, a7);
+			}
+			auto currentMagicka = actorValues->GetActorValue(magicka);
+			auto maxMagicka = actorValues->GetPermanentActorValue(magicka);
 			if (maxMagicka <= 0.0f || currentMagicka < maxMagicka / 2.0f) {
 				return _originalCall(a_this, a_target, arHitLocation, arHitNormal, aeCollisionLayer, auiMaterial, a7);
 			}
@@ -75,6 +82,11 @@ namespace Hooks {
 			rotation.x = angle.x;
 			rotation.z = angle.z;
 			RE::Projectile::LaunchSpell(&newHandle, targetActor, retalliationSpell, a_this->GetPosition(), rotation);
+			_loggerDebug("  Spell retaliated");
+		}
+		else
+		{
+			_loggerDebug("  Requirements not met");
 		}
 		return _originalCall(a_this, a_target, arHitLocation, arHitNormal, aeCollisionLayer, auiMaterial, a7);
 	}
@@ -132,8 +144,13 @@ namespace Hooks {
 			_loggerDebug("  Weapon is silver");
 			return;
 		}
-		auto max = a_this->GetPermanentActorValue(RE::ActorValue::kMagicka) + a_this->GetActorRuntimeData().magickaModifiers.modifiers[RE::ACTOR_VALUE_MODIFIERS::kTemporary];
-		auto current = a_this->GetActorValue(RE::ActorValue::kMagicka);
+		auto* actorValues = a_this->AsActorValueOwner();
+		if (!actorValues) {
+			_loggerError("Failed to resolve ActorValueOwner for Combat Hit.");
+			return;
+		}
+		auto max = actorValues->GetPermanentActorValue(RE::ActorValue::kMagicka) + a_this->GetActorRuntimeData().magickaModifiers.modifiers[RE::ACTOR_VALUE_MODIFIERS::kTemporary];
+		auto current = actorValues->GetActorValue(RE::ActorValue::kMagicka);
 
 		if (current < (max / 2.0f)) {
 			_loggerDebug("  Magicka below 50%");
@@ -180,7 +197,8 @@ namespace Hooks {
 		auto* redirectPerk = DefaultObjects::ModObject<RE::BGSPerk>("PTP_Necromancer_PRK_OneBody"sv);
 		auto* lichRace = DefaultObjects::ModObject<RE::TESRace>("NecroLichRace"sv);
 		auto* silverPerk = DefaultObjects::ModObject<RE::BGSKeyword>("WeapMaterialSilver");
-		if (!redirectPerk || !lichRace || !silverPerk) {
+		auto* frozenCadaverMagicEffect = DefaultObjects::ModObject<RE::EffectSetting>("PTP_Necromancer_FrozenCadaverArmorProc");
+		if (!redirectPerk || !lichRace || !silverPerk || !frozenCadaverMagicEffect) {
 			_loggerError("WARNING! Could not resolve default objects for Combat Hit");
 			return;
 		}
@@ -200,9 +218,21 @@ namespace Hooks {
 
 			for (; it != end && remaining > 0.0f; ++it) {
 				const auto commandedActor = (*it).commandedActor.get().get();
-				if (commandedActor->actorState1.lifeState == RE::ACTOR_LIFE_STATE::kReanimate) {
+				auto magicTarget = commandedActor->AsMagicTarget();
+				if(!magicTarget)
+				{
+					_loggerError("Failed to resolve MagicTarget for commanded actor.");
+					continue;
+				}
+				_loggerDebug("  minion: {0}, isUndead:{1}", commandedActor->GetName(), static_cast<int>(magicTarget->HasMagicEffect(frozenCadaverMagicEffect)));
+				if (magicTarget->HasMagicEffect(frozenCadaverMagicEffect)) {
 					_loggerDebug("  Valid minion");
-					auto health = commandedActor->GetActorValue(RE::ActorValue::kHealth);
+					auto* actorValues = commandedActor->AsActorValueOwner();
+					if (!actorValues) {
+						_loggerError("Failed to resolve ActorValueOwner for commanded actor.");
+						continue;
+					}
+					auto health = actorValues->GetActorValue(RE::ActorValue::kHealth);
 					if (health >= remaining) {
 						remaining -= health;
 						_originalCall(commandedActor, a_hitData);
