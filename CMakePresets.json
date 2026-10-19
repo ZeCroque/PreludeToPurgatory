@@ -44,11 +44,29 @@
       "hidden": false,
       "binaryDir": "${sourceDir}/build",
       "inherits": [
-        "base"
-      ],
-      "cacheVariables": {
-        "SKIP_ARTIFACTS": true
-      }
+        "cmake-dev",
+        "vcpkg",
+        "windows",
+        "vs2022",
+        "test"
+      ]
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Release",
+      "configurePreset": "vs2022-windows-vcpkg-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "Debug",
+      "configurePreset": "vs2022-windows-vcpkg-release",
+      "configuration": "Debug"
+    },
+    {
+      "name": "Test",
+      "configurePreset": "vs2022-windows-vcpkg-test",
+      "configuration": "Release"
     }
   ]
 }
