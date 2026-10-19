@@ -3,10 +3,15 @@
     "modShortName": "PTP",
     "modVersion": "1.0.0",
     "buildCode": "1",
-    "modSize": "Small",
+    "modSize": "Full",
     "game": "Skyrim",
     "gamePath": "H:/Games/steamapps/common/Skyrim Special Edition",
     "mo2Path": "J:/100Install/mo2/",
     "mo2InstanceName": "SkyrimAE",
-    "buildFolder": "./build/CIScripts"
+    "buildFolder": "./build/CIScripts/",
+    "extraBuildDependencies": 
+    [
+        "H:/ModOrganizer/SkyrimAE/mods/Undeath - Classical Lichdom v4/Source/Scripts",
+        "H:/ModOrganizer/SkyrimAE/mods/Custom Skills Framework/Source/Scripts"
+    ]
 }

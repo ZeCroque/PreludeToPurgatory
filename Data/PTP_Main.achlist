@@ -2,7 +2,7 @@
     "Data\\Scripts\\necrolichtransformscript.pex",
     "Data\\Scripts\\necroreverteffectscript.pex",
     "Data\\Scripts\\necrouclphylacterysoulscript.pex",
-    "Data\\Scripts\\PTP_AMEConjureDragolich.pex.pex",
+    "Data\\Scripts\\PTP_AMEConjureDragolich.pex",
     "Data\\Scripts\\PTP_AMEIceTrail.pex",
     "Data\\Scripts\\PTP_AMEJoinTheMarchListener.pex",
     "Data\\Scripts\\PTP_AMEToggleLichight.pex",
@@ -11,10 +11,10 @@
     "Data\\Scripts\\PTP_QuestMaintenanceScript.pex",
     "Data\\Scripts\\PTP_RefAliasMidnightMonitor.pex",
     "Data\\Scripts\\SEA_PTPUtilityFunctions.pex",
-    "Data\\Meshes\\seasparrow\\interface\\intlichdomperkskydom.nif",
+    "Data\\Meshes\\seasparrow\\interface\\intlichdomperkskydome.nif",
     "Data\\Meshes\\seasparrow\\preludetopurgatory\\magic\\ptp_dragonpriestweave.nif",
     "Data\\Textures\\seasparrow\\interface\\lichdomclouds.dds",
     "Data\\Textures\\seasparrow\\interface\\lichdomcolor.dds",
     "Data\\Textures\\seasparrow\\interface\\lichdomtreeimage.dds",
-    "Data\\Textures\\seasparrow\\preludetopurgatory\\effecs\\gradients\\gradmagickaweave.dds"
+    "Data\\Textures\\seasparrow\\preludetopurgatory\\effects\\gradients\\gradmagickaweave.dds"
 ]
