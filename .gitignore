@@ -17,6 +17,10 @@
 *.ilstrings
 *.dlstrings
 *.strings
+*.exp
+*.lib
+*.pdb
+*.dll
 __pycache__
 *Edit Backups
 *Edit Cache
@@ -29,5 +33,4 @@ ModInfo.psc
 info.xml
 po3_StartOnSave.ini
 debug
-SKSE
 Cmake
