@@ -17,6 +17,20 @@
       }
     },
     {
+      "name": "vs2022",
+      "hidden": true,
+      "generator": "Visual Studio 17 2022",
+      "toolset": "v143"
+    },
+    {
+      "name": "release",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "OUTPUT_FOLDER": "${sourceDir}//Data"
+      }
+    },
+    {
       "name": "test",
       "hidden": false,
       "binaryDir": "${sourceDir}/build-test",
