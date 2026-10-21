@@ -109,6 +109,12 @@
           "perk": "PreludeToPurgatory.esp|810",
           "x": -3.0,
           "y": 3.0
+        },
+        {
+          "id": "DragonSoul",
+          "perk": "PreludeToPurgatory.esp|6",
+          "x": -0.1,
+          "y": -0.80
         }
       ]
     }
