@@ -23,46 +23,11 @@ Event OnActivate(ObjectReference akActionRef)
 		int ibutton = NecroUCLSoulMenu.show(SoulCount)
 		
 		;SeaSparrow - Removing soul feeding mechanic here.
-			if ibutton == 0
-				;/
-				If SoulCount >= 50.0
-					NecroPhylacterySoulCount.SetValue(50.0)		
-;					Notification: You have reached the maximum soul capacity
-					NecroPhyMsgMaxSoul.Show()
-					RefreshScalingEffects()
-					HandleFrameworkExceptions()
-				Else
-					If (Game.GetPlayer().GetItemCount(SoulGemBlackFilled) >= 1) 
-						Game.GetPlayer().RemoveItem(SoulGemBlackFilled, 1)
-						NecroPhylacterySoulCount.Mod(1.0)						
-						SoulTrapSoundFX.play(PlayerRef)
-;						Message: Your phylactery absorbs a black soul.
-						NecroPhyMsgAbsorbSoul.Show()
-						RunFeedSoulFrameWork()
-						HandleFrameworkExceptions()
-						RefreshScalingEffects()
-					Else
-;						Message: You do not have any filled black soul gems to feed to your phylactery.
-						NecroPhyMsgNoSoul.Show()
-						HandleFrameworkExceptions()
-						RefreshScalingEffects()
-					EndIf
-				EndIf
-				
-			elseif ibutton == 1 
-				/;
-				ShowReconstructMenu()	
-				
-			elseif ibutton == 2 
-				ShowRelocateMenu()	
-				
-			elseif ibutton == 3
-				;SeaSparrow - These are not needed anymore.
-				;HandleFrameworkExceptions()
-				;RefreshScalingEffects()
-			EndIf
-		
-		
+		if ibutton == 0
+			ShowReconstructMenu()		
+		elseif ibutton == 2 
+			ShowRelocateMenu()	
+		EndIf
 	EndIf
 
 Endevent
@@ -383,7 +348,6 @@ Function HandleFrameworkExceptions()
 	if PlayerRef.HasSpell(NecroLichMindFlaySpell)
 		PlayerRef.RemoveSpell(NecroLichMindFlaySpell)
 	endif	
-	NecroLichMindFlaySpell
 	
 endFunction
 
