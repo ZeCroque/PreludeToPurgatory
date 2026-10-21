@@ -179,7 +179,6 @@ Function NecroLichTransform()
 			EndIf
 			; Then we switch the staff to the other hand
 			(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = TheLich.GetEquippedWeapon(True)
-			Debug.Trace("staff: " + (NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff)
 			rightHandEquipment = (NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff
 		EndIf
 	; If we do not need to switch hands
@@ -197,8 +196,6 @@ Function NecroLichTransform()
 			rightHandEquipment = TheLich.GetEquippedSpell(1)
 		EndIf
 	EndIf
-	TheLich.UnequipItemSlot(1)
-	TheLich.UnequipItemSlot(2)
 
  	;SeaSparrow - One liner, runs all our checks.
 	PreludeManager.PreTransform(TheLich)
