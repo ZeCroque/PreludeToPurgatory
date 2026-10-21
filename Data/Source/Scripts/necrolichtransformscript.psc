@@ -456,23 +456,20 @@ Function NecroLichTransform()
 	;For Guest of Volkihar, we have to add lich to VL faction to fix aggro in castle volkihar. 
 	
    	; make everyone hate you and alert anyone nearby that they should now know the player is a lich
-	; UCL: lich form is not hated once u get the masquerade perk
 	
-	If !TheLich.HasPerk(NecroUCLMasqueradePerk)
-		TheLich.AddToFaction(DLC1PlayerVampireLordFaction)
-		TheLich.SetAttackActorOnSight(true)
-		Game.SendWereWolfTransformation()
-		TheLich.AddToFaction(LichFaction)
-		HunterFaction.SetPlayerEnemy()
-		Game.SetPlayerReportCrime(false)
-		
-		 int cfIndex = 0
-			while (cfIndex < CrimeFactions.GetSize())
-				Debug.Trace("VAMPIRE: Setting enemy flag on " + CrimeFactions.GetAt(cfIndex))
-				(CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy()
-				cfIndex += 1
-			endwhile	
-	endif
+	TheLich.AddToFaction(DLC1PlayerVampireLordFaction)
+	TheLich.SetAttackActorOnSight(true)
+	Game.SendWereWolfTransformation()
+	TheLich.AddToFaction(LichFaction)
+	HunterFaction.SetPlayerEnemy()
+	Game.SetPlayerReportCrime(false)
+	
+	int cfIndex = 0
+	while (cfIndex < CrimeFactions.GetSize())
+		Debug.Trace("VAMPIRE: Setting enemy flag on " + CrimeFactions.GetAt(cfIndex))
+		(CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy()
+		cfIndex += 1
+	endwhile	
 
 		
 	pDLC1VQ04SafeToEnter.SetValue(1)

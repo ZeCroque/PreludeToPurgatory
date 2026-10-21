@@ -426,12 +426,7 @@ Function Revert()
 	;beth slop: DLC1PlayerVampireLordFaction has hardcoded interactions to prevent volkihar castle aggro
 	;so this is needed for Guest of Volkihar to fix aggro in castle volkihar. thanks bethesda!	
 	TheLich.RemoveFromFaction(DLC1PlayerVampireLordFaction)
-	
-; 	UCL: if no masquerade perk, add bounty to player when people witness transform
-	If !TheLich.HasPerk(NecroUCLMasqueradePerk)
-		Game.SendWereWolfTransformation()
-	endif
-	
+	Game.SendWereWolfTransformation()
 	
 	;Utility.Wait(0.5)
 
@@ -459,17 +454,15 @@ Function Revert()
 	;UCL: dont remove revert and transform spells so that they can stay in favourite menu
 	;TheLich.removespell(NecroRevert)
 	
-	;this function is slow as fuck, therefore its done last and only if masquerade perk isnt active. 
+	;this function is slow as fuck, therefore its done last.
 	;the phylactery script will handle scenarios where player obtains the perk in lich form
 	
-	If !TheLich.HasPerk(NecroUCLMasqueradePerk)
-        int cfIndex = 0
-        while (cfIndex < CrimeFactions.GetSize())
-            ;Debug.Trace("LICH: Removing enemy flag from " + CrimeFactions.GetAt(cfIndex))
-            (CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(false)
-            cfIndex += 1
-        endwhile
-	endif
+	int cfIndex = 0
+	while (cfIndex < CrimeFactions.GetSize())
+		;Debug.Trace("LICH: Removing enemy flag from " + CrimeFactions.GetAt(cfIndex))
+		(CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(false)
+		cfIndex += 1
+	endwhile
 	
     ;and you're now recognized
     Game.SetPlayerReportCrime(true)
