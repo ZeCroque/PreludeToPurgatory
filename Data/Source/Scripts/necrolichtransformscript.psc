@@ -159,28 +159,46 @@ Function NecroLichTransform()
     EndIf
 /;
 	
-	; unequip weapons
 	TheLich.equipitem(NecroLichClearArrow, false, true)
     TheLich.removeitem(NecroLichClearArrow, 1, true)
-	Weapon wleft = TheLich.GetEquippedWeapon(true)
-	Weapon wright = TheLich.GetEquippedWeapon(false)
 
-
-;Check for staff. if staff is in left hand, reequip to right.
-
-	if (TheLich.GetEquippedItemType(1) == 8)
-		(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = wright
-;		debug.notification("player has staff")
-
-	elseif (TheLich.GetEquippedItemType(0) == 8)
-		(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = wleft
-		TheLich.UnequipItem(wleft, false, true)
-;		TheLich.EquipItemEx(wleft, wleft.GetFormID(), 1)
-	else
-		(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = None
-;		debug.notification("player doesnt have staff")
-
-	endif
+	Spell leftHandEquipment = None
+	Form rightHandEquipment = None
+	; If the player has a staff equipped in the wrong hand
+	If(TheLich.GetEquippedItemType(0) == 8)
+		; We check if he had a staff in the right hand and, if so, we replace the wrong staff by the default spell
+		If(TheLich.GetEquippedItemType(1) == 8)
+			leftHandEquipment = NecroUCLIceCoffin
+		Else
+			; Otherwise, if he had a spell in the right hand, we switch it to left or switch to default spell otherwise
+			Spell otherHandSpell = TheLich.GetEquippedSpell(1)
+			If(otherHandSpell)
+				leftHandEquipment = otherHandSpell
+			Else
+				leftHandEquipment = NecroUCLIceCoffin
+			EndIf
+			; Then we switch the staff to the other hand
+			(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = TheLich.GetEquippedWeapon(True)
+			Debug.Trace("staff: " + (NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff)
+			rightHandEquipment = (NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff
+		EndIf
+	; If we do not need to switch hands
+	Else
+		; if the player has a non-staff weapon at left, we replace with the default spell
+		If(TheLich.GetEquippedItemType(0) != 9)
+			leftHandEquipment = NecroUCLIceCoffin
+		Else
+			leftHandEquipment = TheLich.GetEquippedSpell(0)
+		EndIf
+		;If the player has any non-staff, non-spell in the right hand, we equip the default spell
+		If(TheLich.GetEquippedItemType(1) != 8 && TheLich.GetEquippedItemType(1) != 9)
+			rightHandEquipment = NecroDeathGrip
+		Else
+			rightHandEquipment = TheLich.GetEquippedSpell(1)
+		EndIf
+	EndIf
+	TheLich.UnequipItemSlot(1)
+	TheLich.UnequipItemSlot(2)
 
  	;SeaSparrow - One liner, runs all our checks.
 	PreludeManager.PreTransform(TheLich)
@@ -432,25 +450,21 @@ Function NecroLichTransform()
 	
 	TheLich.addspell(NecroUClDarkConduit, false)
 	TheLich.addspell(NecroDeathGrip, false)
-	TheLich.equipspell(NecroUCLIceCoffin, 0)
-	TheLich.equipspell(NecroDeathGrip, 1)
 
-
-	If ((NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff == wright) ; Give the player their right hand staff back, if there was one
-		;debug.notification("equipping players staff")
-		TheLich.EquipItem(wright, false, True) ;equip the players staff they had in their right hand from earlier
-	    TheLich.DrawWeapon()
-		Debug.SendAnimationEvent(TheLich, "Magic_Equip")
-	elseif ((NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff == wleft) ; Give the player left hand staff on right hand
-		TheLich.EquipItemEx(wleft, wleft.GetFormID(), 1)
-	    TheLich.DrawWeapon()
-		Debug.SendAnimationEvent(TheLich, "Magic_Equip")		
-	elseif ((NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff == None) ; If no staff was stored earlier, give the player the default right hand spell
-		;debug.notification("not equipping staff")
-		TheLich.equipspell(NecroDeathGrip, 1)
-		TheLich.DrawWeapon()
-		Debug.SendAnimationEvent(TheLich, "Magic_Equip")
-	endif
+	TheLich.removeitem(NecroLichClearArrow, 1, true)
+	If(rightHandEquipment)
+		Weapon rightHandStaff = rightHandEquipment as Weapon
+		If(rightHandStaff)
+			TheLich.EquipItemEx(rightHandStaff, 0, False, False)
+		Else
+			TheLich.EquipSpell(rightHandEquipment as Spell, 1)
+		EndIf
+	EndIf
+	If(leftHandEquipment)
+		TheLich.EquipSpell(leftHandEquipment, 0)
+	EndIf
+	TheLich.DrawWeapon()
+	Debug.SendAnimationEvent(TheLich, "Magic_Equip")
 
 	;Beth slop: DLC1PlayerVampireLordFaction has hardcoded interactions to prevent volkihar castle aggro
 	;For Guest of Volkihar, we have to add lich to VL faction to fix aggro in castle volkihar. 
