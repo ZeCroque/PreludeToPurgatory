@@ -169,6 +169,7 @@ Function NecroLichTransform()
 		; We check if he had a staff in the right hand and, if so, we replace the wrong staff by the default spell
 		If(TheLich.GetEquippedItemType(1) == 8)
 			leftHandEquipment = NecroUCLIceCoffin
+			(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = TheLich.GetEquippedWeapon(False)
 		Else
 			; Otherwise, if he had a spell in the right hand, we switch it to left or switch to default spell otherwise
 			Spell otherHandSpell = TheLich.GetEquippedSpell(1)
@@ -186,14 +187,23 @@ Function NecroLichTransform()
 		; if the player has a non-staff weapon at left, we replace with the default spell
 		If(TheLich.GetEquippedItemType(0) != 9)
 			leftHandEquipment = NecroUCLIceCoffin
+			(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = None
 		Else
 			leftHandEquipment = TheLich.GetEquippedSpell(0)
+			(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = None
 		EndIf
 		;If the player has any non-staff, non-spell in the right hand, we equip the default spell
 		If(TheLich.GetEquippedItemType(1) != 8 && TheLich.GetEquippedItemType(1) != 9)
 			rightHandEquipment = NecroDeathGrip
 		Else
-			rightHandEquipment = TheLich.GetEquippedSpell(1)
+			Spell equippedSpell = TheLich.GetEquippedSpell(1)
+			If(equippedSpell)
+				rightHandEquipment = equippedSpell
+				(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = None
+			Else
+				rightHandEquipment = TheLich.GetEquippedWeapon(false)
+				(NecroTrackingQuest as NecroTrackingQuestSCRIPT).Staff = rightHandEquipment as Weapon
+			EndIf
 		EndIf
 	EndIf
 

@@ -58,24 +58,17 @@ EndEvent
 Function OnKeyDown(Int KeyCode)
   If PlayerRef.GetRace() == LichRace && !Utility.IsInMenuMode()
     If KeyCode == iStaffKeyCode
-      If (NecroTrackingQuest as necrotrackingquestscript).Staff == None
+      If(!(NecroTrackingQuest as necrotrackingquestscript).Staff)
+        PlayerRef.equipspell(NecroUCLIceCoffin, 0)
         PlayerRef.equipspell(NecroDeathGrip, 1)
         PlayerRef.equipspell(NecroRevert, 2)
-        PlayerRef.DrawWeapon()
-        Debug.SendAnimationEvent(PlayerRef as ObjectReference, "Magic_Equip")
-      ElseIf (NecroTrackingQuest as necrotrackingquestscript).Staff != None
-        If PlayerRef.GetEquippedItemType(1) == 8
-          PlayerRef.equipspell(NecroDeathGrip, 1)
-          PlayerRef.equipspell(NecroRevert, 2)
-          PlayerRef.DrawWeapon()
-          Debug.SendAnimationEvent(PlayerRef as ObjectReference, "Magic_Equip")
-        Else
-          PlayerRef.EquipItemEx((NecroTrackingQuest as necrotrackingquestscript).Staff as Form, (NecroTrackingQuest as necrotrackingquestscript).Staff.GetFormID(), 1 as Bool, True)
-          PlayerRef.equipspell(NecroRevert, 2)
-          PlayerRef.DrawWeapon()
-          Debug.SendAnimationEvent(PlayerRef as ObjectReference, "Magic_Equip")
-        EndIf
-      EndIf
+      Else
+        PlayerRef.equipspell(NecroUCLIceCoffin, 0)
+        PlayerRef.EquipItemEx((NecroTrackingQuest as necrotrackingquestscript).Staff, 0, False, False)
+        PlayerRef.equipspell(NecroRevert, 2)
+      EndIf            
+      PlayerRef.DrawWeapon()        
+      Debug.SendAnimationEvent(PlayerRef as ObjectReference, "Magic_Equip")
     ElseIf KeyCode == iFavoriteKeyCode
       Game.SetBeastForm(False)
       Self.RegisterForMenu("FavoritesMenu")
@@ -140,7 +133,6 @@ Event OnObjectEquipped(Form akBaseObject, ObjectReference akReference)
     Weapon W = akBaseObject as Weapon
     Int WeaponType = W.GetWeaponType()
     If WeaponType == 8
-      (NecroTrackingQuest as necrotrackingquestscript).Staff = W
       If(PlayerRef.GetEquippedWeapon(true))
         Spell oldSpell = PlayerRef.GetEquippedSpell(1)
         If(oldSpell)
