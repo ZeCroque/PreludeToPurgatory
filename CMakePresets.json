@@ -64,7 +64,10 @@
         "windows",
         "vs2022",
         "release"
-      ]
+      ],
+      "cacheVariables": {
+        "GOG_SUPPORT": false
+      }
     },
     {
       "name": "vs2022-windows-vcpkg-release-gog",
