@@ -18,6 +18,9 @@ add_compile_definitions(SKYRIM_SUPPORT_AE)
 if (BUILD_TEST)
 	add_compile_definitions(DEBUG)
 endif()
+if (GOG_SUPPORT)
+	add_compile_definitions(GOG_SUPPORT)
+endif()
 
 # ---- Project ----
 

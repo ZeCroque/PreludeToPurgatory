@@ -25,7 +25,16 @@ extern "C" DLLEXPORT constinit auto SKSEPlugin_Version = []() {
     v.AuthorName("SeaSparrow");
     v.UsesAddressLibrary();
     v.UsesUpdatedStructs();
-    v.CompatibleVersions({ SKSE::RUNTIME_SSE_LATEST_AE });
+    v.CompatibleVersions(
+    {
+#ifdef GOG_SUPPORT
+	    SKSE::RUNTIME_SSE_1_6_1130,
+	    SKSE::RUNTIME_SSE_1_6_1170,
+	    SKSE::RUNTIME_SSE_1_6_1179
+#else
+        SKSE::RUNTIME_SSE_LATEST_AE 
+#endif
+    });
     return v;
     }();
 

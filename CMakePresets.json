@@ -67,6 +67,15 @@
       ]
     },
     {
+      "name": "vs2022-windows-vcpkg-release-gog",
+      "inherits": [
+        "vs2022-windows-vcpkg-release"
+      ],
+      "cacheVariables": {
+        "GOG_SUPPORT": true
+      }
+    },
+    {
       "name": "vs2022-windows-vcpkg-test",
       "inherits": [
         "cmake-dev",
@@ -81,6 +90,11 @@
     {
       "name": "Release",
       "configurePreset": "vs2022-windows-vcpkg-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "GOG Release",
+      "configurePreset": "vs2022-windows-vcpkg-release-gog",
       "configuration": "Release"
     },
     {
