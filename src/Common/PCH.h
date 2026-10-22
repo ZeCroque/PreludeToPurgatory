@@ -15,12 +15,14 @@
 #include <ClibUtil/distribution.hpp>
 #include <ClibUtil/editorID.hpp>
 #include <ClibUtil/rng.hpp>
+#include <ClibUtil/singleton.hpp>
 
 #include <json/json.h>
 
 #define DLLEXPORT __declspec(dllexport)
 
 using namespace std::literals;
+using namespace clib_util::singleton;
 
 #ifdef SKYRIM_AE
 #	define OFFSET(se, ae) ae
@@ -33,9 +35,9 @@ using namespace std::literals;
 #include "Plugin.h"
 
 #define _debugEDID clib_util::editorID::get_editorID
-#define _loggerDebug REX::DEBUG
-#define _loggerInfo REX::INFO
-#define _loggerError REX::ERROR
+#define _loggerDebug SKSE::log::debug
+#define _loggerInfo SKSE::log::info
+#define _loggerError SKSE::log::error
 
 #include "CustomSkillsFramework/CustomSkills/Interfaces.h"
 
@@ -68,10 +70,14 @@ namespace Utils {
 
 	template <typename T, typename E>
 	class EventClass : 
-		public RE::BSTEventSink<T>,
-		public REX::TSingleton<E> 
+		public RE::BSTEventSink<T>
 	{
 	public:
+		static E* GetSingleton() {
+			static E singleton;
+			return std::addressof(singleton);
+		}
+
 		bool RegisterListener() {
 			RE::ScriptEventSourceHolder::GetSingleton()->AddEventSink(this);
 			return true;
@@ -81,5 +87,14 @@ namespace Utils {
 			RE::ScriptEventSourceHolder::GetSingleton()->RemoveEventSink(this);
 			return true;
 		}
+
+	protected:
+		EventClass() = default;
+		~EventClass() = default;
+
+		EventClass(const EventClass&) = delete;
+		EventClass(EventClass&&) = delete;
+		EventClass& operator=(const EventClass&) = delete;
+		EventClass& operator=(EventClass&&) = delete;
 	};
 }

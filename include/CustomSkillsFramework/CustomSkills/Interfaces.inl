@@ -61,7 +61,7 @@ namespace CustomSkills
 		auto result = static_cast<CustomSkillsInterface*>(a_msg->data);
 
 		if (result && result->Version() > CustomSkillsInterface::kVersion) {
-			REX::WARN("interface definition is out of date"sv);
+			_loggerError("interface definition is out of date"sv);
 		}
 
 		a_intfc = result;

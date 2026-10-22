@@ -30,7 +30,8 @@ meta.ini
 Backup
 Release
 ModInfo.psc
+Plugin.h
+Version.rc
 info.xml
 po3_StartOnSave.ini
 debug
-Cmake

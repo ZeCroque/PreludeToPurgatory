@@ -20,13 +20,14 @@ namespace Hooks {
 	void HandleSpellCollisions::Install()
 	{
 		auto& trampoline = SKSE::GetTrampoline();
+		REL::Relocation<std::uintptr_t> target;
 		if(REL::Module::get().version() >= SKSE::RUNTIME_SSE_1_7_99)
 		{
-			REL::Relocation<std::uintptr_t> target{ REL::ID(44204), 0x239 };
+			target = REL::Relocation<std::uintptr_t>{ REL::ID(44204), 0x239 };
 		}
 		else
 		{
-			REL::Relocation<std::uintptr_t> target{ REL::ID(44204), 0x21F };
+			target = REL::Relocation<std::uintptr_t>{ REL::ID(44204), 0x21F };
 		}
 		_originalCall = trampoline.write_call<5>(target.address(), &HandleCollision);
 	}

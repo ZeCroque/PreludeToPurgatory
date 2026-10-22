@@ -4,7 +4,7 @@ namespace Events {
 	using EventResult = RE::BSEventNotifyControl;
 
 	class SoulTrapListener :
-		public REX::TSingleton<SoulTrapListener>,
+		public ISingleton<SoulTrapListener>,
 		public RE::BSTEventSink<RE::SoulsTrapped::Event> {
 	public:
 		void RegisterListener();
@@ -26,11 +26,10 @@ namespace Events {
 	};
 
 	class InputEventListener :
-		public REX::TSingleton<InputEventListener>,
+		public ISingleton<InputEventListener>,
 		public RE::BSTEventSink<RE::InputEvent*>
 	{
 	public:
-		[[nodiscard]]
 		void RegisterListener() noexcept;
 	private:
 		virtual RE::BSEventNotifyControl ProcessEvent(RE::InputEvent* const* a_event, RE::BSTEventSource<RE::InputEvent*>*) override;

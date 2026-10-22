@@ -2,15 +2,29 @@
   "version": 3,
   "cmakeMinimumRequired": {
     "major": 3,
-    "minor": 24,
+    "minor": 21,
     "patch": 0
   },
   "configurePresets": [
     {
-      "name": "base",
+      "name": "cmake-dev",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES": "Debug;Release",
+        "CMAKE_CXX_FLAGS": "/EHsc /MP /W4 /external:anglebrackets /external:W0 $penv{CXXFLAGS}"
+      }
+    },
+    {
+      "name": "vcpkg",
       "hidden": true,
       "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-      "generator": "Visual Studio 18 2026",
+      "cacheVariables": {
+        "VCPKG_OVERLAY_PORTS": "${sourceDir}/cmake/ports/"
+      }
+    },
+    {
+      "name": "windows",
+      "hidden": true,
       "cacheVariables": {
         "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL",
         "VCPKG_TARGET_TRIPLET": "x64-windows-static-md"
@@ -27,36 +41,33 @@
       "hidden": true,
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "OUTPUT_FOLDER": "${sourceDir}//Data"
+        "OUTPUT_FOLDER": "${sourceDir}//Data",
+        "PROJECT_VERSION_MAJOR": "1",
+        "PROJECT_VERSION_MINOR": "0",
+        "PROJECT_VERSION_PATCH": "0",
+        "PROJECT_NAME": "PreludeToPurgatory"
       }
     },
     {
       "name": "test",
-      "hidden": false,
+      "hidden": true,
       "binaryDir": "${sourceDir}/build-test",
-      "inherits": [
-        "base"
-      ],
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "BUILD_TEST": true
       }
     },
     {
-      "name": "github-gog",
-      "hidden": false,
-      "binaryDir": "${sourceDir}/build",
+      "name": "vs2022-windows-vcpkg-release",
       "inherits": [
-        "base"
-      ],
-      "cacheVariables": {
-        "GOG": true,
-        "SKIP_ARTIFACTS": true
-      }
+        "cmake-dev",
+        "vcpkg",
+        "windows",
+        "vs2022",
+        "release"
+      ]
     },
     {
-      "name": "github-steam",
-      "hidden": false,
-      "binaryDir": "${sourceDir}/build",
+      "name": "vs2022-windows-vcpkg-test",
       "inherits": [
         "cmake-dev",
         "vcpkg",

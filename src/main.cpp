@@ -1,5 +1,3 @@
-#include <spdlog/sinks/basic_file_sink.h>
-
 #include "defaultObjects.h"
 #include "events.h"
 #include "hooks.h"
@@ -11,11 +9,10 @@ void MessageHandler(SKSE::MessagingInterface::Message* a_message) {
         Events::SoulTrapListener::GetSingleton()->RegisterListener();
         Events::ActorDeathListener::GetSingleton()->RegisterListener();
         Events::HitEventListener::GetSingleton()->RegisterListener();
-        Events::InputEventListener::GetSingleton()->RegisterListener();
+        //Events::InputEventListener::GetSingleton()->RegisterListener();
 
         if (!DefaultObjects::Storage::GetSingleton()->Initialize()) {
-            _loggerError("Failed to get the default objects. Aborting load...");
-            REX::FAIL("Failed to get the default objects for Prelude to Purgatory.");
+            _loggerError("Failed to get the default objects for Prelude to Purgatory.");
         }
         Hooks::Install();
     }
@@ -35,9 +32,7 @@ extern "C" DLLEXPORT constinit auto SKSEPlugin_Version = []() {
 extern "C" DLLEXPORT bool __cdecl SKSEPlugin_Load(const SKSE::LoadInterface* a_skse) {
     // alloc
     SKSE::InitInfo info{};
-    info.hook = true;
     info.log = true;
-    info.logLevel = REX::ELogLevel::Info;
     info.trampoline = true;
     info.trampolineSize = 280u; // temporary, FIX LATER
     SKSE::Init(a_skse, info);
