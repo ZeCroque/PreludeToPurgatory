@@ -16,5 +16,14 @@
     "Data\\Textures\\seasparrow\\interface\\lichdomclouds.dds",
     "Data\\Textures\\seasparrow\\interface\\lichdomcolor.dds",
     "Data\\Textures\\seasparrow\\interface\\lichdomtreeimage.dds",
-    "Data\\Textures\\seasparrow\\preludetopurgatory\\effects\\gradients\\gradmagickaweave.dds"
+    "Data\\Textures\\seasparrow\\preludetopurgatory\\effects\\gradients\\gradmagickaweave.dds",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_CHINESE.txt",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_ENGLISH.txt",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_FRENCH.txt",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_GERMAN.txt",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_ITALIAN.txt",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_JAPANESE.txt",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_POLISH.txt",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_RUSSIAN.txt",
+    "Data\\Interface\\Translations\\PreludeToPurgatory_SPANISH.txt"
 ]
