@@ -40,8 +40,6 @@ necrolichtrackingquest Property LichTrackingQuest Auto
 Int iLevel
 Float fExperienceToNextLevel
 Float fCurrentExperience
-Int iTweenKey
-Int iTweenControllerKey
 
 Int[] iVersion 
 
@@ -124,21 +122,6 @@ the eventual Ascension patch is easier.
 ;and ensuring that million faces works.
 Bool Function PreTransform(Actor TheLich)
 
-	iTweenKey = Input.GetMappedKey("Tween Menu", 0)
-	iTweenControllerKey = Input.GetMappedKey("Tween Menu", 2)
-	
-	If iTweenKey <= 0 && iTweenControllerKey <= 0
-		RegisterForKey(15)
-		RegisterForKey(277)
-	Else
-		If iTweenKey > 0
-			RegisterForKey(iTweenKey)
-		EndIf
-		If iTweenControllerKey > 0
-			RegisterForKey(iTweenControllerKey)
-		EndIf
-	EndIf
-
     If (!LichTrackingQuest.PlayerOriginalRace || TheLich.HasPerk(PTP_Powers_PRK_NecroticRejuvination))
 
         LichTrackingQuest.PlayerOriginalRace = TheLich.GetRace()
@@ -190,28 +173,12 @@ Bool Function PostRevert(Actor TheLich)
         TheLich.RemoveSpell(PTP_Powers_SPL_RiteOfTheDragolich)
         TheLich.RemoveSpell(PTP_Entry_SPL_abMirrorWeave)
         TheLich.RemoveSpell(PTP_Entry_SPL_abHardenedWeave)
-
-        UnregisterForKey(15)
-        UnregisterForKey(277)
-
-        If iTweenKey > 0
-            UnregisterForKey(iTweenKey)
-        EndIf
-        If iTweenControllerKey > 0
-            UnregisterForKey(iTweenControllerKey)
-        EndIf
     Return True
 EndFunction
 
 ;/
 Events
 /;
-
-Event OnKeyDown(Int a_iKeyCode)
-    If (PlayerREF.GetRace() == NecroLichRace && a_iKeyCode == 15 && !Utility.IsInMenuMode())
-        CustomSkills.OpenCustomSkillMenu("Lichdom")
-    EndIf
-EndEvent
 
 Event OnInit()
 
