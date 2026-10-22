@@ -1,22 +1,88 @@
-## Enchantment Art Extender
-This is a framework that allows for more interesting visuals for enchanted weapons in TESV: Skyrim Special Edition. It achieves this by silently adding specific spells with hit arts. Each of these "swaps" is defined in a configuration file.
+# Prelude to Purgatory - Fixes & Tweaks
 
-## Building
-### Requirements:
-- CMake
-- VCPKG
-- Visual Studio (with desktop C++ development)
----
-### Instructions:
-```
-git clone https://github.com/SeaSparrowOG/EnchantmentArtExtender
-cd EnchantmentArtExtender
-git submodule init
-git submodule update --recursive
-cmake --preset vs2022-windows-vcpkg 
-cmake --build Release --config Release
-```
----
-### Automatic deployment to MO2:
-You can automatically deploy to MO2's mods folder by defining an [Environment Variable](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4) named SKYRIM_MODS_FOLDER and pointing it to your MO2 mods folder. It will create a new mod with the appropriate name. After that, simply refresh MO2 and enable the mod. Image:
-![Example of Environment Variable setup](https://cdn.discordapp.com/attachments/625292279468523522/1204193482600615936/Screenshot_61.png?ex=65d3d793&is=65c16293&hm=ed710c138bc02ead7ca11d85963c164feb1ea39e501ca46ffb1bac8609008473&)
+## Index:
+
+1. Overview
+2. Details
+3. Frequently Asked Questions
+4. Known Issues
+5. Mod content
+6. Installation
+7. Compatibility
+8. My other mods
+9. Recommended Mods
+10. Credits
+11. Tools used
+12. Licensing/Legal 
+13. Feedback
+
+## 1. OVERVIEW
+
+_template_
+
+## 2. DETAILS
+
+_template_
+
+### Supported languages
+
+The mod is available in the following languages:
+- English
+
+## 3. FREQUENTLY ASKED QUESTIONS
+
+_template_
+
+## 4. KNOWN ISSUES
+
+None. Please let me know if you find any.
+
+## 5. MOD CONTENT
+
+This mod consists of two main files : 
+- *PreludeToPurgatory.esp* (_template_ master)
+- *PreludeToPurgatory.bsa*
+
+## 6. INSTALLATION
+
+**Automatic (Recommended)**
+- Use the Mod Manager Download button. Install and enable the file(s) in your favorite mod manager (ModOrganizer2 is my personal preference).
+
+**Manual**
+- Extract the required files (cf. `5. MOD CONTENT`) from the archive to your Data folder and activate them in the in-game Creations menu.
+
+## 7. COMPATIBILITY
+
+No known incompatibility. Please let me know if you find any.
+
+## 8. MY OTHER MODS
+
+## 9. RECOMMENDED MODS
+
+_template_
+
+## 10. CREDITS
+
+- Thanks to Bethesda Softworks for this great game
+- Thanks to the authors of the tools listed below
+- Thanks to xtcrefugee for answering my questions about mid/small masters on the Starfield Modding Discord
+
+## 11. TOOLS USED
+
+- Creation Kit
+- xEdit
+- Visual Studio Code
+- xTranslator
+- Bethesda Archive Extractor
+- Champollion
+- Gimp & Photopea
+
+## 12. LICENSING/LEGAL
+
+If you want to modify and/or redistribute this mod, I would like to be contacted first please. Note that it is under GPL3 licensing, thus you have the obligation to make any modification done to the original source code available somewhere publicly.
+
+You can find the source code [here](https://github.com/ZeCroque/PreludeToPurgatory).
+
+## 13. FEEDBACK
+
+*Found a bug or have an idea for new features? Let me know in NexusMods' comment section or on my [Discord server](https://discord.gg/K9Jk4y2tjJ)!*
