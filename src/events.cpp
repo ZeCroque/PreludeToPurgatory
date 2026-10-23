@@ -180,7 +180,8 @@ namespace Events {
 		auto* frozenCadaverPerk = DefaultObjects::ModObject<RE::BGSPerk>("PTP_Necromancer_PRK_FrozenCadavers"sv);
 		auto* frozenCadaverProc = DefaultObjects::ModObject<RE::SpellItem>("PTP_Necromancer_SPL_FrozenCadaverIceHIt"sv);
 		auto* lichRace = DefaultObjects::ModObject<RE::TESRace>("NecroLichRace"sv);
-		if (!lichRace || !frozenCadaverPerk || !frozenCadaverProc) {
+		auto* frozenCadaverMagicEffect = DefaultObjects::ModObject<RE::EffectSetting>("PTP_Necromancer_FrozenCadaverArmorProc");
+		if (!lichRace || !frozenCadaverPerk || !frozenCadaverProc || !frozenCadaverMagicEffect) {
 			_loggerError("Could not resolve default objects for Hit Event.");
 			_loggerError("  >Lich Race: {}", lichRace ? _debugEDID(lichRace) : "NULL");
 			_loggerError("  >Cadaver Perk: {}", frozenCadaverPerk ? _debugEDID(frozenCadaverPerk) : "NULL");
@@ -217,7 +218,13 @@ namespace Events {
 			return EventResult::kContinue;
 		}
 
-		if (!eventVictim->IsCommandedActor() || eventVictim->actorState1.lifeState != RE::ACTOR_LIFE_STATE::kReanimate) {
+		auto magicTarget = eventVictim->AsMagicTarget();
+		if(!magicTarget)
+		{
+			_loggerError("Failed to resolve MagicTarget for commanded actor.");
+			return EventResult::kContinue;
+		}
+		if (!eventVictim->IsCommandedActor() || !magicTarget->HasMagicEffect(frozenCadaverMagicEffect)) {
 			_loggerDebug("  Victim {} is not a commanded zombie", eventVictim->GetName());
 			return EventResult::kContinue;
 		}
@@ -228,7 +235,7 @@ namespace Events {
 
 		auto* zombieMC = eventVictim->GetMagicCaster(RE::MagicSystem::CastingSource::kInstant);
 		if (!zombieMC) return EventResult::kContinue;
-
+		_loggerDebug("  Casting spell on victim{0}", eventVictim->GetName());
 		zombieMC->CastSpellImmediate(frozenCadaverProc, false, eventVictim, 1.0f, false, 0.0f, eventVictim);
 		return EventResult::kContinue;
 	}
