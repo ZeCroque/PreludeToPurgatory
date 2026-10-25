@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SSTXMLRessources>
+  <Params>
+    <Addon>PreludeToPurgatoryTweaks</Addon>
+    <Source>english</Source>
+    <Dest>french</Dest>
+    <Version>2</Version>
+  </Params>
+  <Content>
+    <String List="0" sID="000001">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination5</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Necrotic Rejuvenation</Source>
+      <Dest>Rajeunissement nécrotique</Dest>
+    </String>
+    <String List="0" sID="000002">
+      <EDID>PTP_Necromancer_PRK_JoinTheMarch</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Join the March</Source>
+      <Dest>Rejoignez la marche</Dest>
+    </String>
+    <String List="0" sID="000003">
+      <EDID>NecroUCLSoulMenu</EDID>
+      <REC id="2" idMax="2">MESG:ITXT</REC>
+      <Source>Exit</Source>
+      <Dest>Quitter</Dest>
+    </String>
+    <String List="0" sID="000004">
+      <EDID>PTP_Entry_PRK_Transcendence</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Transcendence</Source>
+      <Dest>Transcendance</Dest>
+    </String>
+    <String List="0" sID="000006">
+      <EDID>PTP_Necromancer_PRK_FrozenCadavers</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Frozen Cadavers</Source>
+      <Dest>Cadavres gelés</Dest>
+    </String>
+    <String List="0" sID="000007">
+      <EDID>NecroUCLSoulMenu</EDID>
+      <REC id="0" idMax="2">MESG:ITXT</REC>
+      <Source>Reconstruct Form</Source>
+      <Dest>Reconstituer votre forme</Dest>
+    </String>
+    <String List="0" sID="000008">
+      <EDID>PTP_Entry_SPL_DragonSoul</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>DragonSoul</Source>
+      <Dest>DragonSoul</Dest>
+    </String>
+    <String List="0" sID="00000A">
+      <EDID>PTP_Framework_QST_DefaultObjects</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>Default Objects Quest</Source>
+      <Dest>Default Objects Quest</Dest>
+    </String>
+    <String List="0" sID="00000B">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination4</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Necrotic Rejuvenation</Source>
+      <Dest>Rajeunissement nécrotique</Dest>
+    </String>
+    <String List="0" sID="00000C">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination3</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Necrotic Rejuvenation</Source>
+      <Dest>Rajeunissement nécrotique</Dest>
+    </String>
+    <String List="0" sID="00000E">
+      <EDID>PTP_Entry_PRK_DragonSoul</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Dragon Soul</Source>
+      <Dest>Âme de Dragon</Dest>
+    </String>
+    <String List="0" sID="000010">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Necrotic Rejuvenation</Source>
+      <Dest>Rajeunissement nécrotique</Dest>
+    </String>
+    <String List="0" sID="000012">
+      <EDID>PTP_Necromancer_PRK_OneBody</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>One Body</Source>
+      <Dest>Corps partagé</Dest>
+    </String>
+    <String List="0" sID="000016">
+      <EDID>NecroUCLSoulMenu</EDID>
+      <REC id="1" idMax="2">MESG:ITXT</REC>
+      <Source>Relocate Phylactery</Source>
+      <Dest>Déplacer le phylactère</Dest>
+    </String>
+    <String List="0" sID="000017">
+      <EDID>PTP_Necromancer_SPL_FrozenCadaverIceHIt</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Frozen Cadaver Ice HIt</Source>
+      <Dest>Frozen Cadaver Ice HIt</Dest>
+    </String>
+    <String List="0" sID="00001A">
+      <EDID>NecroUCLFoodPotionRestoMod</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Lich passive for healing and potions</Source>
+      <Dest>Lich passive for healing and potions</Dest>
+    </String>
+    <String List="0" sID="00001B">
+      <EDID>PTP_Entry_MGF_DragonSoul</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>DragonSoul</Source>
+      <Dest>DragonSoul</Dest>
+    </String>
+    <String List="0" sID="00001D">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination2</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Necrotic Rejuvenation</Source>
+      <Dest>Rajeunissement nécrotique</Dest>
+    </String>
+    <String List="1" sID="000005">
+      <EDID>PTP_Entry_PRK_Transcendence</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Gain 10% more experience in Lich form. Potions work at their full potential once more.</Source>
+      <Dest>Vous gagnez 10% d&apos;expérience en plus quand vous revêtez votre apparence de liche. Les potions fonctionnent de nouveau à leur plein potentiel.</Dest>
+    </String>
+    <String List="1" sID="000009">
+      <EDID>PTP_Entry_PRK_DragonSoul</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>You harness the power of the dragon priests and receive a dragon soul to strengthen your Thu&apos;um.</Source>
+      <Dest>Vous embrassez le pouvoir des prêtres-dragon et recevez une âme de dragon pour renforcer votre Thu&apos;um.</Dest>
+    </String>
+    <String List="1" sID="00000D">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination3</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Necrotic Rejuvenation is 60% stronger.</Source>
+      <Dest>Votre sort de Rajeunissement nécrotique est 60% plus efficace.</Dest>
+    </String>
+    <String List="1" sID="00000F">
+      <EDID>NecroUCLSoulMenu</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>You stare at the container of your soul, pulsing with your unlife.</Source>
+      <Dest>Vous regardez le réceptacle de votre âme, symbole de votre non-vie.</Dest>
+    </String>
+    <String List="1" sID="000011">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Necrotic Rejuvenation is 20% stronger.</Source>
+      <Dest>Votre sort de Rajeunissement nécrotique est 20% plus efficace.</Dest>
+    </String>
+    <String List="1" sID="000013">
+      <EDID>PTP_Necromancer_PRK_OneBody</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>If you would take physical damage, it is first mitigated among your commanded summoned or reanimated undead.</Source>
+      <Dest>Les dégâts physiques que vous subissez sont partagés entre vous et les mort-vivants que vous avez invoqué ou réanimé.  </Dest>
+    </String>
+    <String List="1" sID="000014">
+      <EDID>PTP_Necromancer_PRK_JoinTheMarch</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>If an enemy would die within 3 seconds of receiving physical damage from an allied summoned or reanimated undead, it is revived under that undead&apos;s control.</Source>
+      <Dest>Si un ennemi devait mourir dans les 3s après avoir reçu des dégâts physiques de la part d&apos;un des mort-vivants que vous avez invoqué ou réanimé, il est réssucité par ce dernier.</Dest>
+    </String>
+    <String List="1" sID="000015">
+      <EDID>PTP_Necromancer_PRK_FrozenCadavers</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>You may control an additional summoned or reanimated undead. Nearby allied summoned or reanimated undead gain 150 Armor and 10% Magic resist, and are empowered when struck by Frost spells.</Source>
+      <Dest>Vous pouvez contrôler un mort-vivant supplémentaire. Les mort-vivants alliés gagnent 150 points d&apos;armure et 10% de résistance à la magie et sont renforcé par vos sorts de glace.</Dest>
+    </String>
+    <String List="1" sID="000018">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination5</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Necrotic Rejuvenation is 100% stronger. Restoration spell can heal you once more.</Source>
+      <Dest>Votre sort de Rajeunissement nécrotique est 80% plus efficace. Les sorts de guérison peuvent vous guérir à nouveau.</Dest>
+    </String>
+    <String List="1" sID="000019">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination4</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Necrotic Rejuvenation is 80% stronger.</Source>
+      <Dest>Votre sort de Rajeunissement nécrotique est 80% plus efficace.</Dest>
+    </String>
+    <String List="1" sID="00001C">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination2</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Necrotic Rejuvenation is 40% stronger.</Source>
+      <Dest>Votre sort de Rajeunissement nécrotique est 40% plus efficace.</Dest>
+    </String>
+  </Content>
+</SSTXMLRessources>
