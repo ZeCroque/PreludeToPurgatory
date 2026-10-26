@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SSTXMLRessources>
+  <Params>
+    <Addon>PreludeToPurgatory.esp</Addon>
+    <Source>english</Source>
+    <Dest>french</Dest>
+    <Version>2</Version>
+  </Params>
+  <Content>
+    <String List="0" Partial="2">
+      <EDID>[00000000]</EDID>
+      <REC>TES4:CNAM</REC>
+      <Source>SeaSparrow</Source>
+      <Dest>SeaSparrow</Dest>
+    </String>
+    <String List="0" Partial="2">
+      <EDID>[00000000]</EDID>
+      <REC>TES4:SNAM</REC>
+      <Source>Arbre de compétence pour liches.</Source>
+      <Dest>Arbre de compétence pour liches.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_RCE_WispShadeRace</EDID>
+      <REC>RACE:FULL</REC>
+      <Source>Feu follet</Source>
+      <Dest>Feu follet</Dest>
+    </String>
+    <String List="0">
+      <EDID>NecroLichTransform</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Apparence de liche</Source>
+      <Dest>Apparence de liche</Dest>
+    </String>
+    <String List="0">
+      <EDID>NecroLichTransform</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Prenez votre véritable forme de liche.</Source>
+      <Dest>Prenez votre véritable forme de liche.</Dest>
+    </String>
+    <String List="0">
+      <EDID>NecroRevertEffect</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Apparence de liche - Dissimulation</Source>
+      <Dest>Apparence de liche - Dissimulation</Dest>
+    </String>
+    <String List="0">
+      <EDID>NecroRevertEffect</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Déguisez-vous en une forme humanoïde.</Source>
+      <Dest>Déguisez-vous en une forme humanoïde.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_MagickaWeaveFX</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Magicka Weave FX</Source>
+      <Dest>Magicka Weave FX</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_FortifyMagickaConstantSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Renfort de magie</Source>
+      <Dest>Renfort de magie</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_FortifyMagickaConstantSelf</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Magie : + &lt;mag&gt; points.</Source>
+      <Dest>Magie : + &lt;mag&gt; points.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_FrozenCadaverMagicResistProc</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Froid mordant</Source>
+      <Dest>Froid mordant</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_FrozenCadaverMagicResistProc</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Increases the target&apos;s armor by &lt;mag&gt; point.</Source>
+      <Dest>Increases the target&apos;s armor by &lt;mag&gt; point.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_MGF_abFrozenCadaversCloakConstSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Resistances Cloak</Source>
+      <Dest>Resistances Cloak</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_MGF_FrozenCadaverIceTrail</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Frozen Cadaver Ice Trail</Source>
+      <Dest>Frozen Cadaver Ice Trail</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_ReconstructFormPerkCarrier</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Magicka Weave FX</Source>
+      <Dest>Magicka Weave FX</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_FortifyMagickaRateConstantSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Regenerate Magicka</Source>
+      <Dest>Récupération de magie</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_FortifyMagickaRateConstantSelf</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Magicka regenerates &lt;mag&gt;% faster.</Source>
+      <Dest>Régénération magie &lt;mag&gt;% plus rapide.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_FortifyMagickaRateCapstoneConstantSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Regenerate Magicka</Source>
+      <Dest>Récupération de magie</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_FortifyMagickaRateCapstoneConstantSelf</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Magicka regenerates &lt;mag&gt;% faster.</Source>
+      <Dest>Régénération magie &lt;mag&gt;% plus rapide.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_TranscendencePerkCarrier</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Magicka Weave FX</Source>
+      <Dest>Magicka Weave FX</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_MGF_JoinTheMarchListenerFFTActor</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Join the March Listener</Source>
+      <Dest>Join the March Listener</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_MGF_JoinTheMarchListenerFFTActor</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Listener spell for Join The March. On death, triggers the script to cast the reanimation.</Source>
+      <Dest>Listener spell for Join The March. On death, triggers the script to cast the reanimation.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_MGF_JoinTheMarchProcFFTActor</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Join the March Proc</Source>
+      <Dest>Join the March Proc</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_MGF_JoinTheMarchProcFFTActor</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Ranime un cadavre pendant &lt;dur&gt; secondes pour qu&apos;il se batte à vos côtés.</Source>
+      <Dest>Ranime un cadavre pendant &lt;dur&gt; secondes pour qu&apos;il se batte à vos côtés.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_FrozenCadaverArmorProc</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Froid mordant</Source>
+      <Dest>Froid mordant</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_FrozenCadaverArmorProc</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Increases the target&apos;s armor by &lt;mag&gt; point.</Source>
+      <Dest>Increases the target&apos;s armor by &lt;mag&gt; point.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_abFortifyMagicResistConstSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Hardened Weave Armor</Source>
+      <Dest>Toile renforcée - Armure</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_abFortifyMagicResistConstSelf</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Improves the caster&apos;s armor rating by &lt;mag&gt; points.</Source>
+      <Dest>Augmente la valeur de résistance à la magie du lanceur de &lt;mag&gt; points.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_HardenedWeaveMagickaDamage</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Hardened Weave Magicka Damage</Source>
+      <Dest>Hardened Weave Magicka Damage</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_HardenedWeaveMagickaDamage</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Damages the Lich&apos;s magicka by &lt;mag&gt; points every second for &lt;dur&gt; seconds.</Source>
+      <Dest>Damages the Lich&apos;s magicka by &lt;mag&gt; points every second for &lt;dur&gt; seconds.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_WraithformRestoreMagickaFFSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Restauration de magie</Source>
+      <Dest>Restauration de magie</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_WraithformRestoreStaminaFFSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Restauration de vigueur</Source>
+      <Dest>Restauration de vigueur</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_LichSightDetectLifeConstSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Detect Life Enemy Exterior</Source>
+      <Dest>Detect Life Enemy Exterior</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_NecroLichNightEye</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>True Sight</Source>
+      <Dest>Vision suprême</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_NecroLichNightEye</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Voyez ce que d&apos;autres ne voient pas.</Source>
+      <Dest>Voyez ce que d&apos;autres ne voient pas.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_LichSightDetectLifeALLYConstSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Detect Life Friend Exterior</Source>
+      <Dest>Detect Life Friend Exterior</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_ToggleLichSight</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Toggle Lih Sight</Source>
+      <Dest>Vision suprême</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_ToggleLichSight</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>See in the dark and detect all living creatures within 200 feet.</Source>
+      <Dest>Voyez dans le noir et détectez les créatures vivantes dans un rayon de 200 pieds.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_abCloakDetectEnemy</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>True Sight</Source>
+      <Dest>Vision suprême</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_abCloakDetectEnemy</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Voyez ce que d&apos;autres ne voient pas.</Source>
+      <Dest>Voyez ce que d&apos;autres ne voient pas.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_RiteOfTheDragolichFFTAimed</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Rite of the Dragolich</Source>
+      <Dest>Rite de la Dracoliche</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_RiteOfTheDragolichFFTAimed</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Conjure a mighty spirit of midnight to aid you in combat until it is slain.</Source>
+      <Dest>Invoque un puissant esprit de minuit pour vous aider en combat jusqu&apos;à ce qu&apos;il soit défait.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_WraithformFFSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Wraithform</Source>
+      <Dest>Forme spectrale</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_WraithformFFSelf</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Assume your Wratihform, becoming unabled to be harmed for &lt;dur&gt; seconds. Whenever a creature dies near you, you regenerate some Health, Magicka, and Stamina.</Source>
+      <Dest>Revêtez votre apparence spectrale, devenant invulnérable pour &lt;dur&gt; secondes. Quand une créature meurt autours de vous, vous récupérez un peu de vie, magie et d&apos;endurance.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_MGF_WraithformRestoreHealthFFSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Restore Health</Source>
+      <Dest>Restore Health</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_abFortifyArmorConstSelf</EDID>
+      <REC>MGEF:FULL</REC>
+      <Source>Hardened Weave Armor</Source>
+      <Dest>Toile renforcée - Armure</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_MGF_abFortifyArmorConstSelf</EDID>
+      <REC>MGEF:DNAM</REC>
+      <Source>Improves the caster&apos;s armor rating by &lt;mag&gt; points.</Source>
+      <Dest>Augmente la valeur de résistance à la magie du lanceur de &lt;mag&gt; points.</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_SPL_abHardenedWeave</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Hardened Weave</Source>
+      <Dest>Toile renforcée</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_SPL_abMirrorWeave</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Mirror Weave</Source>
+      <Dest>Toile réfléchissante</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_SPL_HardenedWeaveMagickaDamage</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Hardened Weave Magicka Damage</Source>
+      <Dest>Hardened Weave Magicka Damage</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_WraithformHealProc</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Wraithform Healing</Source>
+      <Dest>Wraithform Healing</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_SPL_MagickaWeave</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Magicka Weave</Source>
+      <Dest>Toile magique</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_SPL_MagickaWeaveRetaliation</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Trait de foudre</Source>
+      <Dest>Trait de foudre</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_SPL_SupremeMagickaWeave</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Magicka Weave</Source>
+      <Dest>Toile magique</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_SPL_TranscendencePassives</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Passives</Source>
+      <Dest>Passives</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_SPL_MinionResurrectSpell</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Minion Revive</Source>
+      <Dest>Minion Revive</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_SPL_JoinTheMarchListener</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Join The March Listener</Source>
+      <Dest>Join The March Listener</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_SPL_FrozenCadaverProc</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Frozen Cadaver Resistance Proc</Source>
+      <Dest>Frozen Cadaver Resistance Proc</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_SPL_abFrozenCadavers</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Frozen Cadavers Cloak</Source>
+      <Dest>Frozen Cadavers Cloak</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_SPL_FrozenCadaverIceHIt</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Frozen Cadaver Ice HIt</Source>
+      <Dest>Frozen Cadaver Ice HIt</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_abReconstructFormPassives</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Passives</Source>
+      <Dest>Passives</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_abLichSightProc</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Lich Sight</Source>
+      <Dest>Vision suprême</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_ToggleLichSight</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Lich Sight</Source>
+      <Dest>Vision suprême</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_LichSightDetectAlly</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Lich Sight visual Proc</Source>
+      <Dest>Lich Sight visual Proc</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_abLichSightProcEnemy</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Lich Sight</Source>
+      <Dest>Vision suprême</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_LichSightDetectEnemy</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Lich Sight visual Proc</Source>
+      <Dest>Lich Sight visual Proc</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_RiteOfTheDragolich</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Spirit of Midnight</Source>
+      <Dest>Esprit de minuit</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_SPL_Wraithform</EDID>
+      <REC>SPEL:FULL</REC>
+      <Source>Wraithform</Source>
+      <Dest>Forme spectrale</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_NPC_EncWispMother</EDID>
+      <REC>NPC_:FULL</REC>
+      <Source>Spirit Of Midnight</Source>
+      <Dest>Esprit de minuit</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_HZD_IceTrailHazard</EDID>
+      <REC>HAZD:FULL</REC>
+      <Source>Entrave de glace</Source>
+      <Dest>Entrave de glace</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Framework_QST_DefaultObjects</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>Default Objects Quest</Source>
+      <Dest>Default Objects Quest</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Framework_QST_MaintenanceQuest</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>Prelude: Maintenance Quest</Source>
+      <Dest>Prelude: Maintenance Quest</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_QST_DragolichFollowerQuest</EDID>
+      <REC>QUST:FULL</REC>
+      <Source>Dragolich Follower Quest</Source>
+      <Dest>Dragolich Follower Quest</Dest>
+    </String>
+    <String List="0">
+      <EDID>NecroUCLFoodPotionRestoMod</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Lich passive for healing and potions</Source>
+      <Dest>Lich passive for healing and potions</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_PRK_Transcendence</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Transcendance</Source>
+      <Dest>Transcendance</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_PRK_MagickaWeave</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Magicka Weave</Source>
+      <Dest>Toile magique</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_PRK_HardenedWeave</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Hardened Weave</Source>
+      <Dest>Toile renforcée</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_PRK_MirrorWeave</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Mirror Weave</Source>
+      <Dest>Toile réfléchissante</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Entry_PRK_SupremeWeave</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Supreme Weave</Source>
+      <Dest>Toile suprême</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_PRK_FrozenCadavers</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Frozen Cadavers</Source>
+      <Dest>Cadavres gelés</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_PRK_OneBody</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Corps unique
+</Source>
+      <Dest>Corps unique
+</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Necromancer_PRK_JoinTheMarch</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Rejoignez la marche</Source>
+      <Dest>Rejoignez la marche</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Reconstruction de  forme</Source>
+      <Dest>Reconstruction de  forme</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_PRK_WraithForm</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Wraith Form</Source>
+      <Dest>Forme spectrale</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_PRK_EnemyDefied</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Peer Beyond</Source>
+      <Dest>Vision de l&apos;au-delà</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_Powers_PRK_RiteOfTheDragolich</EDID>
+      <REC>PERK:FULL</REC>
+      <Source>Spirit of Midnight</Source>
+      <Dest>Esprit de minuit</Dest>
+    </String>
+    <String List="0">
+      <EDID>NecroUCLSoulMenu</EDID>
+      <REC id="0" idMax="2">MESG:ITXT</REC>
+      <Source>Reconstituer votre forme</Source>
+      <Dest>Reconstituer votre forme</Dest>
+    </String>
+    <String List="0">
+      <EDID>NecroUCLSoulMenu</EDID>
+      <REC id="1" idMax="2">MESG:ITXT</REC>
+      <Source>Déplacer le phylactère</Source>
+      <Dest>Déplacer le phylactère</Dest>
+    </String>
+    <String List="0">
+      <EDID>NecroUCLSoulMenu</EDID>
+      <REC id="2" idMax="2">MESG:ITXT</REC>
+      <Source>Quitter</Source>
+      <Dest>Quitter</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_MSG_MissingDLLNotification</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Prelude To Purgatory</Source>
+      <Dest>Prélude au Purgatoire</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_MSG_Updating</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Prelude To Purgatory updating...</Source>
+      <Dest>Prélude au Purgatoire se met à jour...</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_MSG_MissingCustomSkillsFramework</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Prelude: Missing Custom Skills</Source>
+      <Dest>Prélude au Purgatoire: Custom Skills Framework manquant</Dest>
+    </String>
+    <String List="0">
+      <EDID>PTP_MSG_IncompatibleUpdate</EDID>
+      <REC>MESG:FULL</REC>
+      <Source>Prelude: Incompatible Update</Source>
+      <Dest>Prélude au Purgatoire: Mise à jour incompatible</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Powers_SPL_abLichSightProc</EDID>
+      <REC>SPEL:DESC</REC>
+      <Source>Nearby living creatures, but not undead, machines, or Daedra, can be seen through walls.</Source>
+      <Dest>Les créatures vivantes à proximité sont visibles à travers les murs, à l&apos;exception des morts-vivants, des machines et des daedras.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Powers_SPL_abLichSightProcEnemy</EDID>
+      <REC>SPEL:DESC</REC>
+      <Source>Nearby living creatures, but not undead, machines, or Daedra, can be seen through walls.</Source>
+      <Dest>Les créatures vivantes à proximité sont visibles à travers les murs, à l&apos;exception des morts-vivants, des machines et des daedras.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Powers_SPL_RiteOfTheDragolich</EDID>
+      <REC>SPEL:DESC</REC>
+      <Source>Conjure a mighty Spirit of Midnight to aid you in combat until it is slain.</Source>
+      <Dest>Invoque un puissant esprit de minuit pour vous aider en combat jusqu&apos;à ce qu&apos;il soit défait.</Dest>
+    </String>
+    <String List="1">
+      <EDID>NecroUCLMovablePerk</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Perk that lets player lich rehome their phylactery.
+ Follow Eternity&apos;s Sunrise.
+
+</Source>
+      <Dest>Perk that lets player lich rehome their phylactery.
+ Follow Eternity&apos;s Sunrise.
+
+</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Entry_PRK_Transcendence</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Gain 25% more experience in Lich form, your Lich form is no longer hated and feared. Food and Restoration spells work once more. You can assume a Vampiric or Lycanthropic mortal form.</Source>
+      <Dest>Vous gagnez 25% d&apos;expérience en plus quand vous revêtez votre apparence de liche et n&apos;êtes plus détesté et craint. La nourriture et les sorts de Guérison fonctionnent de nouveau à leur plein potentiel. Vous pouvez être un vampire ou un lycanthrope.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Entry_PRK_MagickaWeave</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>You gain 50 Magicka and 25% Magicka Regeneration, doubled in Lich Form. In Lich form, you are surrounded by a Magicka Weave while your arms are raised.</Source>
+      <Dest>Vous obtenez 50 points de magie et le régénération de magie est 25% plus rapide. Ces avantages sont doublés lorsque vous revêtez votre apparence de liche. Sous cette forme, une toile magique apparaît autours de vous lorsque vous êtes en position de combat.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Entry_PRK_HardenedWeave</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Your Magicka Weave allows you to partially resist incoming physical damage, converting it to magicka damage. You gain 150 armor in Lich form.</Source>
+      <Dest>Votre toile magique vous permet de résister partiellement aux dégâts physiques, les convertissant en dégâts magique. Vous gagnez 150 points d&apos;armure lorsque vous revêtez votre forme de liche.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Entry_PRK_MirrorWeave</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Your Magicka weave has a chance based on your Magicka to retaliate against hostile spells. You gain 10% Magic Resist.</Source>
+      <Dest>Votre toile magique a une chance, basée sur votre total de magie, de retourner les sorts hostiles à leurs lanceurs. Vous obtenez 10% de résistance à la magie.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Entry_PRK_SupremeWeave</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>You regenerate Magicka faster while you have 50% or more max Magicka.</Source>
+      <Dest>Votre régénération de magie est plus rapide lorsque vous avez 50% ou plus de votre total de magie disponible.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Necromancer_PRK_FrozenCadavers</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Vous pouvez contrôler un mort-vivant supplémentaire. Les mort-vivants alliés gagnent 150 points d&apos;armure et 10% de résistance à la magie et sont renforcé par vos sorts de glace.</Source>
+      <Dest>Vous pouvez contrôler un mort-vivant supplémentaire. Les mort-vivants alliés gagnent 150 points d&apos;armure et 10% de résistance à la magie et sont renforcé par vos sorts de glace.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Necromancer_PRK_OneBody</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Les dégâts physiques que vous subissez sont partagés entre vous et les mort-vivants que vous avez invoqué ou réanimé.</Source>
+      <Dest>Les dégâts physiques que vous subissez sont partagés entre vous et les mort-vivants que vous avez invoqué ou réanimé.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Necromancer_PRK_JoinTheMarch</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Si un ennemi devait mourir dans les 3s après avoir reçu des dégâts physiques de la part d&apos;un des mort-vivants que vous avez invoqué ou réanimé, il est réssucité par ce dernier.</Source>
+      <Dest>Si un ennemi devait mourir dans les 3s après avoir reçu des dégâts physiques de la part d&apos;un des mort-vivants que vous avez invoqué ou réanimé, il est réssucité par ce dernier.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Powers_PRK_NecroticRejuvination</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>You are now able to change your Lich&apos;s appearance. You are now able to relocate your phylactery. Necrotic Rejuvination is 200% stronger.</Source>
+      <Dest>Vous pouvez désormais changer l&apos;apparence de votre liche. Vous pouvez changer l&apos;emplacement de votre phylactère. Le &quot;Rajeunissement nécrotique&quot; est 200% plus efficace.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Powers_PRK_WraithForm</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Grants the &quot;Wraith Form&quot; power in Lich fom. At will, assume your Wraithform and become unable to be harmed. While in Wraithform, deaths near you heal you.</Source>
+      <Dest>Donne accès au pouvoir &quot;Forme spectrale&quot; quand vous revêtez votre apparence de liche. Quand vous le désirez, revêtez votre forme spectrale et devenez invulnérable. Lorsque vous êtes en forme spectrale, vous êtes soigné lorsqu&apos;une créature meurt autours de vous.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Powers_PRK_EnemyDefied</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>You see what others cannot, granting you the &quot;Lich Sight&quot; ability.</Source>
+      <Dest>Vous voyez ce que les autres ne peuvent pas voir, vous confèrant le pouvoir &quot;Vision suprême&quot;.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_Powers_PRK_RiteOfTheDragolich</EDID>
+      <REC>PERK:DESC</REC>
+      <Source>Grants the &quot;Spirit of Midnight&quot; spell. At will, summon a spirit of midnight to aid you in combat until it is slain.</Source>
+      <Dest>Donne accès au sort &quot;Esprit de minuit&quot;. Quand vous le désirez, invoquez un esprit de minuit pour vous aider en combat jusqu&apos;à ce qu&apos;il soit défait.</Dest>
+    </String>
+    <String List="1">
+      <EDID>NecroUCLSoulMenu</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Vous regardez le réceptacle de votre âme, symbole de votre non-vie.</Source>
+      <Dest>Vous regardez le réceptacle de votre âme, symbole de votre non-vie.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_MSG_MissingDLLNotification</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Prelude to Purgatory: The accompanying DLL is either missing or not working. Many perks won&apos;t work.</Source>
+      <Dest>Prélude au Purgatoire: La DLL est manquante ou ne fonctionne pas. Beaucoup de compétences ne fonctionneront pas.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_MSG_Updating</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Prelude To Purgatory updating</Source>
+      <Dest>Prélude au Purgatoire se met à jour</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_MSG_MissingCustomSkillsFramework</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Prelude to Purgatory:
+Custom Skills Framework not working or not up to date. Please install that before continuing.</Source>
+      <Dest>Prélude au Purgatoire: Le Custom Skills Framework est manquant ou n&apos;est pas à jour. Installez-le avant de continuer.</Dest>
+    </String>
+    <String List="1">
+      <EDID>PTP_MSG_IncompatibleUpdate</EDID>
+      <REC>MESG:DESC</REC>
+      <Source>Prelude to Purgatory:
+Current installed version is impossible to update to the version installed. Exit the game, uninstall the previous update, and resume.</Source>
+      <Dest>Prélude au Purgatoire: Impossible de mettre à jour vers la nouvelle version depuis la version installée précédemment. Quittez le jeu, désinstallez le mod, lancez le jeu à nouveau, sauvegardez, quittez et installez la dernière version à nouveau.</Dest>
+    </String>
+  </Content>
+</SSTXMLRessources>
