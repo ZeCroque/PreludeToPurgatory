@@ -7,46 +7,46 @@
     <Version>2</Version>
   </Params>
   <Content>
-    <String List="0" Partial="2">
+    <String List="0">
       <EDID>[00000000]</EDID>
       <REC>TES4:CNAM</REC>
       <Source>SeaSparrow</Source>
       <Dest>SeaSparrow</Dest>
     </String>
-    <String List="0" Partial="2">
+    <String List="0">
       <EDID>[00000000]</EDID>
       <REC>TES4:SNAM</REC>
-      <Source>Arbre de compétence pour liches.</Source>
+      <Source>Skill tree for liches.</Source>
       <Dest>Arbre de compétence pour liches.</Dest>
     </String>
     <String List="0">
       <EDID>PTP_Powers_RCE_WispShadeRace</EDID>
       <REC>RACE:FULL</REC>
-      <Source>Feu follet</Source>
+      <Source>Wisp</Source>
       <Dest>Feu follet</Dest>
     </String>
     <String List="0">
       <EDID>NecroLichTransform</EDID>
       <REC>MGEF:FULL</REC>
-      <Source>Apparence de liche</Source>
+      <Source>Lich Transformation</Source>
       <Dest>Apparence de liche</Dest>
     </String>
     <String List="0">
       <EDID>NecroLichTransform</EDID>
       <REC>MGEF:DNAM</REC>
-      <Source>Prenez votre véritable forme de liche.</Source>
-      <Dest>Prenez votre véritable forme de liche.</Dest>
+      <Source>Assume your true Lich form.</Source>
+      <Dest>Revêtez votre véritable apparence de liche.</Dest>
     </String>
     <String List="0">
       <EDID>NecroRevertEffect</EDID>
       <REC>MGEF:FULL</REC>
-      <Source>Apparence de liche - Dissimulation</Source>
+      <Source>Revert Lich Form</Source>
       <Dest>Apparence de liche - Dissimulation</Dest>
     </String>
     <String List="0">
       <EDID>NecroRevertEffect</EDID>
       <REC>MGEF:DNAM</REC>
-      <Source>Déguisez-vous en une forme humanoïde.</Source>
+      <Source>Return to your humanoid form.</Source>
       <Dest>Déguisez-vous en une forme humanoïde.</Dest>
     </String>
     <String List="0">
@@ -58,19 +58,19 @@
     <String List="0">
       <EDID>PTP_Entry_MGF_FortifyMagickaConstantSelf</EDID>
       <REC>MGEF:FULL</REC>
-      <Source>Renfort de magie</Source>
+      <Source>Fortify Magicka</Source>
       <Dest>Renfort de magie</Dest>
     </String>
     <String List="0">
       <EDID>PTP_Entry_MGF_FortifyMagickaConstantSelf</EDID>
       <REC>MGEF:DNAM</REC>
-      <Source>Magie : + &lt;mag&gt; points.</Source>
+      <Source>Increases your Magicka by &lt;mag&gt; points.</Source>
       <Dest>Magie : + &lt;mag&gt; points.</Dest>
     </String>
     <String List="0">
       <EDID>PTP_Necromancer_FrozenCadaverMagicResistProc</EDID>
       <REC>MGEF:FULL</REC>
-      <Source>Froid mordant</Source>
+      <Source>Frostbite</Source>
       <Dest>Froid mordant</Dest>
     </String>
     <String List="0">
@@ -148,13 +148,13 @@
     <String List="0">
       <EDID>PTP_Necromancer_MGF_JoinTheMarchProcFFTActor</EDID>
       <REC>MGEF:DNAM</REC>
-      <Source>Ranime un cadavre pendant &lt;dur&gt; secondes pour qu&apos;il se batte à vos côtés.</Source>
+      <Source>Reanimate a dead body to fight for you for &lt;dur&gt; seconds.</Source>
       <Dest>Ranime un cadavre pendant &lt;dur&gt; secondes pour qu&apos;il se batte à vos côtés.</Dest>
     </String>
     <String List="0">
       <EDID>PTP_Necromancer_FrozenCadaverArmorProc</EDID>
       <REC>MGEF:FULL</REC>
-      <Source>Froid mordant</Source>
+      <Source>Frostbite</Source>
       <Dest>Froid mordant</Dest>
     </String>
     <String List="0">
@@ -190,13 +190,13 @@
     <String List="0">
       <EDID>PTP_Powers_MGF_WraithformRestoreMagickaFFSelf</EDID>
       <REC>MGEF:FULL</REC>
-      <Source>Restauration de magie</Source>
+      <Source>Restore Magicka</Source>
       <Dest>Restauration de magie</Dest>
     </String>
     <String List="0">
       <EDID>PTP_Powers_MGF_WraithformRestoreStaminaFFSelf</EDID>
       <REC>MGEF:FULL</REC>
-      <Source>Restauration de vigueur</Source>
+      <Source>Restore Stamina</Source>
       <Dest>Restauration de vigueur</Dest>
     </String>
     <String List="0">
@@ -214,7 +214,7 @@
     <String List="0">
       <EDID>PTP_Powers_MGF_NecroLichNightEye</EDID>
       <REC>MGEF:DNAM</REC>
-      <Source>Voyez ce que d&apos;autres ne voient pas.</Source>
+      <Source>See what others cannot.</Source>
       <Dest>Voyez ce que d&apos;autres ne voient pas.</Dest>
     </String>
     <String List="0">
@@ -244,7 +244,7 @@
     <String List="0">
       <EDID>PTP_Powers_MGF_abCloakDetectEnemy</EDID>
       <REC>MGEF:DNAM</REC>
-      <Source>Voyez ce que d&apos;autres ne voient pas.</Source>
+      <Source>See what others cannot.</Source>
       <Dest>Voyez ce que d&apos;autres ne voient pas.</Dest>
     </String>
     <String List="0">
@@ -322,7 +322,7 @@
     <String List="0">
       <EDID>PTP_Entry_SPL_MagickaWeaveRetaliation</EDID>
       <REC>SPEL:FULL</REC>
-      <Source>Trait de foudre</Source>
+      <Source>Thunderbolt</Source>
       <Dest>Trait de foudre</Dest>
     </String>
     <String List="0">
@@ -424,7 +424,7 @@
     <String List="0">
       <EDID>PTP_Necromancer_HZD_IceTrailHazard</EDID>
       <REC>HAZD:FULL</REC>
-      <Source>Entrave de glace</Source>
+      <Source>Ice Hazard</Source>
       <Dest>Entrave de glace</Dest>
     </String>
     <String List="0">
@@ -454,7 +454,7 @@
     <String List="0">
       <EDID>PTP_Entry_PRK_Transcendence</EDID>
       <REC>PERK:FULL</REC>
-      <Source>Transcendance</Source>
+      <Source>Transcendence</Source>
       <Dest>Transcendance</Dest>
     </String>
     <String List="0">
@@ -490,22 +490,20 @@
     <String List="0">
       <EDID>PTP_Necromancer_PRK_OneBody</EDID>
       <REC>PERK:FULL</REC>
-      <Source>Corps unique
-</Source>
-      <Dest>Corps unique
-</Dest>
+      <Source>One Body</Source>
+      <Dest>Corps unique</Dest>
     </String>
     <String List="0">
       <EDID>PTP_Necromancer_PRK_JoinTheMarch</EDID>
       <REC>PERK:FULL</REC>
-      <Source>Rejoignez la marche</Source>
+      <Source>Join the March</Source>
       <Dest>Rejoignez la marche</Dest>
     </String>
     <String List="0">
       <EDID>PTP_Powers_PRK_NecroticRejuvination</EDID>
       <REC>PERK:FULL</REC>
-      <Source>Reconstruction de  forme</Source>
-      <Dest>Reconstruction de  forme</Dest>
+      <Source>Reconstruct Form</Source>
+      <Dest>Reconstruction de forme</Dest>
     </String>
     <String List="0">
       <EDID>PTP_Powers_PRK_WraithForm</EDID>
@@ -528,19 +526,19 @@
     <String List="0">
       <EDID>NecroUCLSoulMenu</EDID>
       <REC id="0" idMax="2">MESG:ITXT</REC>
-      <Source>Reconstituer votre forme</Source>
-      <Dest>Reconstituer votre forme</Dest>
+      <Source>Reconstruct Form</Source>
+      <Dest>Reconstruire votre forme</Dest>
     </String>
     <String List="0">
       <EDID>NecroUCLSoulMenu</EDID>
       <REC id="1" idMax="2">MESG:ITXT</REC>
-      <Source>Déplacer le phylactère</Source>
-      <Dest>Déplacer le phylactère</Dest>
+      <Source>Relocate Phylactery</Source>
+      <Dest>Déplacer votre phylactère</Dest>
     </String>
     <String List="0">
       <EDID>NecroUCLSoulMenu</EDID>
       <REC id="2" idMax="2">MESG:ITXT</REC>
-      <Source>Quitter</Source>
+      <Source>Exit</Source>
       <Dest>Quitter</Dest>
     </String>
     <String List="0">
@@ -630,20 +628,20 @@
     <String List="1">
       <EDID>PTP_Necromancer_PRK_FrozenCadavers</EDID>
       <REC>PERK:DESC</REC>
-      <Source>Vous pouvez contrôler un mort-vivant supplémentaire. Les mort-vivants alliés gagnent 150 points d&apos;armure et 10% de résistance à la magie et sont renforcé par vos sorts de glace.</Source>
+      <Source>You may control an additional summoned or reanimated undead. Nearby allied reanimated undead gain 150 Armor and 10% Magic resist, and are empowered when struck by Frost spells.</Source>
       <Dest>Vous pouvez contrôler un mort-vivant supplémentaire. Les mort-vivants alliés gagnent 150 points d&apos;armure et 10% de résistance à la magie et sont renforcé par vos sorts de glace.</Dest>
     </String>
     <String List="1">
       <EDID>PTP_Necromancer_PRK_OneBody</EDID>
       <REC>PERK:DESC</REC>
-      <Source>Les dégâts physiques que vous subissez sont partagés entre vous et les mort-vivants que vous avez invoqué ou réanimé.</Source>
+      <Source>If you would take physical damage, it is first mitigated among your commanded summoned or reanimated undead.</Source>
       <Dest>Les dégâts physiques que vous subissez sont partagés entre vous et les mort-vivants que vous avez invoqué ou réanimé.</Dest>
     </String>
     <String List="1">
       <EDID>PTP_Necromancer_PRK_JoinTheMarch</EDID>
       <REC>PERK:DESC</REC>
-      <Source>Si un ennemi devait mourir dans les 3s après avoir reçu des dégâts physiques de la part d&apos;un des mort-vivants que vous avez invoqué ou réanimé, il est réssucité par ce dernier.</Source>
-      <Dest>Si un ennemi devait mourir dans les 3s après avoir reçu des dégâts physiques de la part d&apos;un des mort-vivants que vous avez invoqué ou réanimé, il est réssucité par ce dernier.</Dest>
+      <Source>If an enemy would die within 3 seconds of receiving physical damage from an allied reanimated undead, it is revived under that undead&apos;s control.</Source>
+      <Dest>Si un ennemi devait mourir dans les 3s après avoir reçu des dégâts physiques de la part d&apos;un des mort-vivants que vous avez invoqué ou réanimé, il est réanimé par ce dernier.</Dest>
     </String>
     <String List="1">
       <EDID>PTP_Powers_PRK_NecroticRejuvination</EDID>
@@ -672,7 +670,7 @@
     <String List="1">
       <EDID>NecroUCLSoulMenu</EDID>
       <REC>MESG:DESC</REC>
-      <Source>Vous regardez le réceptacle de votre âme, symbole de votre non-vie.</Source>
+      <Source>You stare at the container of your soul, pulsing with your unlife.</Source>
       <Dest>Vous regardez le réceptacle de votre âme, symbole de votre non-vie.</Dest>
     </String>
     <String List="1">
