@@ -98,6 +98,7 @@ Spell Property LichTransform auto
 Spell Property NecroRevert auto
 Spell Property WerewolfChange Auto
 Spell Property DLC1VampireChange Auto
+Spell Property NecroUCLLichSight Auto
 
 ImageSpaceModifier property IllusionLightMassiveImod auto
 
@@ -144,20 +145,12 @@ EndEvent
 
 Function NecroLichTransform()
 
-    	; Preload the spells the player can equip.
-    	PreloadSpells()
+	; Preload the spells the player can equip.
+	PreloadSpells()
  
-
-;	Classical Lichdom : These cures should only be run IF the player has lycanthropy or vampirism, not all the time!
-;   SeaSparrow - Yes but actually no. We run them in our script instead.
-;/
-	If PlayerIsVampire.GetValue() != 0
-	(PlayerVampireQuest as PlayerVampireQuestScript).VampireCure(TheLich)
+	If(TheLich.HasSpell(NecroUCLLichSight))
+		TheLich.removespell(NecroUCLLichSight)
 	EndIf
-	If TheLich.HasSpell(WerewolfChange)
-	(C00 as CompanionsHousekeepingScript).CurePlayer()
-    EndIf
-/;
 	
 	TheLich.equipitem(NecroLichClearArrow, false, true)
     TheLich.removeitem(NecroLichClearArrow, 1, true)
