@@ -131,7 +131,7 @@
       <EDID>PTP_Powers_PRK_NecroticRejuvination5</EDID>
       <REC>PERK:DESC</REC>
       <Source>Necrotic Rejuvenation is 100% stronger. Restoration spell can heal you once more.</Source>
-      <Dest>Votre sort de Rajeunissement nécrotique est 80% plus efficace. Les sorts de guérison peuvent vous guérir à nouveau.</Dest>
+      <Dest>Votre sort de Rajeunissement nécrotique est 100% plus efficace. Les sorts de guérison peuvent vous guérir à nouveau.</Dest>
     </String>
     <String List="1" sID="000011">
       <EDID>PTP_Powers_PRK_NecroticRejuvination</EDID>
