@@ -78,8 +78,7 @@ EndFunction
 
 Function CalculateExperience(Float fExperience)
 
-    If (fExperience <= 0.0 || iLevel >= 14)
-
+    If (fExperience <= 0.0)
         Return
     EndIf
     
