@@ -4,6 +4,8 @@
     "Data\\Scripts\\lichnecroactorscript.pex",
     "Data\\Scripts\\PTP_Entry_MGF_DragonSoulScript.pex",
     "Data\\Scripts\\PTP_Quest_DefaultObjectsScript.pex",
+    "Data\\Scripts\\PTP_QuestMaintenanceScript.pex",
+    "Data\\Scripts\\PTP_TranscendenceProc.pex",
     "Data\\Strings\\PreludeToPurgatoryTweaks_german.STRINGS",
     "Data\\Strings\\PreludeToPurgatoryTweaks_german.DLSTRINGS",
     "Data\\Strings\\PreludeToPurgatoryTweaks_german.ILSTRINGS",

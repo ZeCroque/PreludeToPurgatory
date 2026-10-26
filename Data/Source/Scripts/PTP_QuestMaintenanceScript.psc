@@ -27,6 +27,8 @@ Perk Property PTP_Powers_PRK_NecroticRejuvination Auto
 Perk Property PTP_Entry_PRK_HardenedWeave Auto
 Perk Property PTP_Entry_PRK_MirrorWeave Auto
 Quest Property PTP_Powers_QST_DragolichFollowerQuest Auto
+Message Property PTP_MSG_Updating Auto
+Message Property PTP_MSG_MissingDLLNotification Auto
 Message Property PTP_MSG_MissingCustomSkillsFramework Auto
 Message Property PTP_MSG_IncompatibleUpdate Auto
 Spell Property PTP_Necromancer_SPL_abFrozenCadavers Auto
@@ -45,12 +47,13 @@ Int[] iVersion
 
 Int Function CheckVersion()
 
-    If iVersion[0] < 2
+    ; Version 2 is forever bugged.
+    If iVersion[0] < 3 && iVersion[0] != 2
 
         Return -1
     EndIf
 
-    If iVersion[1] < 0
+    If iVersion[1] < 1
 
         Return 1
     EndIf
@@ -96,7 +99,7 @@ Function CalculateExperience(Float fExperience)
     fExperienceToNextLevel = GetExperienceToNextLevel()
     PTP_Framework_GLB_PerkPoints.Mod(1.0)
 
-    While fExcess >= fExperienceToNextLevel && iLevel <= 12
+    While fExcess >= fExperienceToNextLevel && iLevel <= 14
 
         iLevel += 1
         fExcess -= fExperienceToNextLevel
@@ -177,13 +180,48 @@ Bool Function PostRevert(Actor TheLich)
         PTP_Powers_QST_DragolichFollowerQuest.Stop()
     EndIf
 
-        TheLich.RemoveSpell(PTP_Necromancer_SPL_abFrozenCadavers)
-        TheLich.RemoveSpell(PTP_Powers_SPL_ToggleLichSight)
-        TheLich.RemoveSpell(PTP_Powers_SPL_Wraithform)
-        TheLich.RemoveSpell(PTP_Powers_SPL_RiteOfTheDragolich)
-        TheLich.RemoveSpell(PTP_Entry_SPL_abMirrorWeave)
-        TheLich.RemoveSpell(PTP_Entry_SPL_abHardenedWeave)
+    TheLich.RemoveSpell(PTP_Necromancer_SPL_abFrozenCadavers)
+    TheLich.RemoveSpell(PTP_Powers_SPL_ToggleLichSight)
+    TheLich.RemoveSpell(PTP_Powers_SPL_Wraithform)
+    TheLich.RemoveSpell(PTP_Powers_SPL_RiteOfTheDragolich)
+    TheLich.RemoveSpell(PTP_Entry_SPL_abMirrorWeave)
+    TheLich.RemoveSpell(PTP_Entry_SPL_abHardenedWeave)
     Return True
+EndFunction
+
+Bool bAppliedHatredWorkaround = False
+Formlist Property CrimeFactions Auto
+
+Function Maintenance()
+
+    Int versionCompat = CheckVersion()
+    If (versionCompat == -1) 
+
+        PTP_MSG_IncompatibleUpdate.show()
+        Return 
+    EndIf
+
+    If (versionCompat == 1)
+
+        Stop()
+        PTP_MSG_Updating.Show()
+        Return
+    EndIf
+
+
+    If (!bAppliedHatredWorkaround)
+
+        If (PlayerREF.HasPerk(PTP_Entry_PRK_Transcendence))
+
+            Int pos = CrimeFactions.GetSize();
+            While (pos > 0) 
+
+                pos -= 1
+                (CrimeFactions.GetAt(pos) as Faction).SetPlayerEnemy(False)
+            EndWhile
+        EndIf
+        bAppliedHatredWorkaround = True
+    EndIf
 EndFunction
 
 ;/
@@ -198,13 +236,18 @@ Event OnInit()
         Return
     EndIf
 
-    iVersion = New Int[2]
-    iVersion[0] = 2
-    iVersion[1] = 0
+    Int[] dllVer = SEA_PTPUtilityFunctions.GetVersion()
+    If (!dllVer) 
+
+        PTP_MSG_MissingDLLNotification.Show()
+        Return
+    EndIf
+
+    iVersion = dllVer
 
     iLevel = PTP_Framework_GLB_SkillLevel.GetValue() As Int
     fExperienceToNextLevel = GetExperienceToNextLevel() 
     fCurrentExperience = PTP_Framework_GLB_SkillLevelRatio.GetValue() * fExperienceToNextLevel
 
-    RegisterForKey(15)
+    Maintenance()
 EndEvent
