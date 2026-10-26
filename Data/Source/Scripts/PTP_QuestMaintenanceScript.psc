@@ -155,6 +155,17 @@ Bool Function PreTransform(Actor TheLich)
 
         TheLich.AddSpell(PTP_Entry_SPL_abMirrorWeave)
     EndIf
+
+    If (!TheLich.HasPerk(PTP_Entry_PRK_Transcendence))
+
+        If PlayerIsVampire.GetValue() != 0
+            (PlayerVampireQuest as PlayerVampireQuestScript).VampireCure(TheLich)
+        EndIf
+
+        If TheLich.HasSpell(WerewolfChange)
+            (C00 as CompanionsHousekeepingScript).CurePlayer()
+        EndIf
+    EndIf 
     Return True
 EndFunction
 
