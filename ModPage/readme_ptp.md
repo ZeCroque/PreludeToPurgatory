@@ -69,7 +69,7 @@ Cela inclus mon propre mod [Classical Lichdom - Vampiric Lich](https://www.nexus
 - Un GRAND merci à Sorceree, pour m'avoir aidé à tester le patch pour "Wintersun".
 - Un merci au serveur Discord "Simonrim", pour les retours critiques sur les premières version du mod.
 - Un merci au serveur Discord "Tate's Teatime Terminus" (le Discord de la liste Wabbajack Keizaal), pour les retours critiques sur les premières versions du mod.
-- Un merci à ZeCroque pour les MRs de correction de bug (c'est moi 😁).
+- Un merci à ZeCroque pour les MRs de correction de bug (c'est moi :D).
 
 *Pour la V3+:*
 - Un merci aux gens formidables qui ont fait des retours critiques lors de la préconception.
