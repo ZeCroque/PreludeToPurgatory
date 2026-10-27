@@ -74,12 +74,12 @@ The mod is available in the following languages:
 
 ## 3. REQUIREMENTS
 
-[SKSE64](https://www.nexusmods.com/skyrimspecialedition/mods/30379)
-[Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444)
-[Custom Skills Framework](https://www.nexusmods.com/skyrimspecialedition/mods/41780)
-[Undeath Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/6180)
-[Undeath - Classical Lichdom v4](https://www.nexusmods.com/skyrimspecialedition/mods/40802)
-[Prelude to Purgatory - A Lich Custom Skill Tree](https://www.nexusmods.com/skyrimspecialedition/mods/53143)
+- [SKSE64](https://www.nexusmods.com/skyrimspecialedition/mods/30379)
+- [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444)
+- [Custom Skills Framework](https://www.nexusmods.com/skyrimspecialedition/mods/41780)
+- [Undeath Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/6180)
+- [Undeath - Classical Lichdom v4](https://www.nexusmods.com/skyrimspecialedition/mods/40802)
+- [Prelude to Purgatory - A Lich Custom Skill Tree](https://www.nexusmods.com/skyrimspecialedition/mods/53143)
 
 ## 4. KNOWN ISSUES
 
