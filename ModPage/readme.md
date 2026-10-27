@@ -106,9 +106,9 @@ No known incompatibility. Please let me know if you find any.
 
 ## 8. MY OTHER MODS
 
-- [Undeath - Alternate Lichdom Paths]()
-- [Undeath - Shouts and Hotkeys Enabled]()
-- [Soul Cairn Patches]()
+- [Undeath - Alternate Lichdom Paths](https://www.nexusmods.com/skyrimspecialedition/mods/197102)
+- [Undeath - Shouts and Hotkeys Enabled](https://www.nexusmods.com/skyrimspecialedition/mods/197101)
+- [Soul Cairn Patches](https://www.nexusmods.com/skyrimspecialedition/mods/197103)
 
 ## 9. CREDITS
 
