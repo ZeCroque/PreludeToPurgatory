@@ -32,7 +32,6 @@ The mod makes some general changes to your lich condition, tweaks some perks, im
 - Health potion will heal you as normal (but still with a 50% efficiency malus without the "Transcendence" perk)
 - Lich transformation will always turn NPCs hostile, no perk will change this behavior
 - Food doesn't have any effect, no perk will change this behavior
-- Your lich transformation will always turn NPC hostile, no perk will change this behavior
 - There's no level cap for the lich skill tree (useful for the "Dragon Soul" perk)
 
 ### Perk Changes
@@ -74,12 +73,12 @@ The mod is available in the following languages:
 
 ## 3. REQUIREMENTS
 
-[SKSE64](https://www.nexusmods.com/skyrimspecialedition/mods/30379)
-[Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444)
-[Custom Skills Framework](https://www.nexusmods.com/skyrimspecialedition/mods/41780)
-[Undeath Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/6180)
-[Undeath - Classical Lichdom v4](https://www.nexusmods.com/skyrimspecialedition/mods/40802)
-[Prelude to Purgatory - A Lich Custom Skill Tree](https://www.nexusmods.com/skyrimspecialedition/mods/53143)
+- [SKSE64](https://www.nexusmods.com/skyrimspecialedition/mods/30379)
+- [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444)
+- [Custom Skills Framework](https://www.nexusmods.com/skyrimspecialedition/mods/41780)
+- [Undeath Remastered](https://www.nexusmods.com/skyrimspecialedition/mods/6180)
+- [Undeath - Classical Lichdom v4](https://www.nexusmods.com/skyrimspecialedition/mods/40802)
+- [Prelude to Purgatory - A Lich Custom Skill Tree](https://www.nexusmods.com/skyrimspecialedition/mods/53143)
 
 ## 4. KNOWN ISSUES
 
@@ -106,9 +105,9 @@ No known incompatibility. Please let me know if you find any.
 
 ## 8. MY OTHER MODS
 
-- [Undeath - Alternate Lichdom Paths]()
-- [Undeath - Shouts and Hotkeys Enabled]()
-- [Soul Cairn Patches]()
+- [Undeath - Alternate Lichdom Paths](https://www.nexusmods.com/skyrimspecialedition/mods/197102)
+- [Undeath - Shouts and Hotkeys Enabled](https://www.nexusmods.com/skyrimspecialedition/mods/197101)
+- [Soul Cairn Patches](https://www.nexusmods.com/skyrimspecialedition/mods/197103)
 
 ## 9. CREDITS
 

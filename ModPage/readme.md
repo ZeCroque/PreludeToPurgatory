@@ -32,7 +32,6 @@ The mod makes some general changes to your lich condition, tweaks some perks, im
 - Health potion will heal you as normal (but still with a 50% efficiency malus without the "Transcendence" perk)
 - Lich transformation will always turn NPCs hostile, no perk will change this behavior
 - Food doesn't have any effect, no perk will change this behavior
-- Your lich transformation will always turn NPC hostile, no perk will change this behavior
 - There's no level cap for the lich skill tree (useful for the "Dragon Soul" perk)
 
 ### Perk Changes
