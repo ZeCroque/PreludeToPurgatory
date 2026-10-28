@@ -128,7 +128,8 @@ if (TheLich.GetRace() != LichRace)
 			PlayerST = Game.GetPlayer().GetBaseActorValue("stamina")
 			Transforming = true		
 			; store player race again in case they changed race by ShowRaceMenu()
-			(NecroLichRitualQuest as NecroLichTrackingQuest).GetPlayerOriginalRace()	
+			(NecroLichRitualQuest as NecroLichTrackingQuest).GetPlayerOriginalRace()
+			Game.GetPlayer().RemoveSpell(NecroRevert)
 			NecroLichTransform()
 		else
 			MAGFail.Play(TheLich)
@@ -137,7 +138,16 @@ if (TheLich.GetRace() != LichRace)
 			Game.SetBeastForm(false)
 		endif
 else
-	NecroTransformationAlreadyLichMsg.Show()
+	NecroLichTransformPlayerFireFXShort.Play(TheLich as ObjectReference, 0.5)
+	TheLich.placeAtMe(TransformFXExplosion as Form, 1, False, False)
+	TheLich.placeAtMe(TransformFXParticles as Form, 1, False, False)
+	TheLich.placeAtMe(FXDragonPriestLargeExplosion as Form, 1, False, False)
+	TheLich.addspell(AbLichNecroPassive, False)
+	PlayerHP = TheLich.GetBaseActorValue("health")
+	PlayerMG = TheLich.GetBaseActorValue("Magicka")
+	PlayerST = TheLich.GetBaseActorValue("Stamina")
+	Transforming = True
+	Self.Revert()
 endif
 
 EndEvent
@@ -443,11 +453,6 @@ Function NecroLichTransform()
 		TheLich.AddPerk(Lightfoot)
 	endif
 	
-	if !TheLich.HasSpell(NecroRevert)
-		TheLich.AddSpell(NecroRevert, false)
-	endif
-	TheLich.equipspell(NecroRevert, 2)
-	
 	TheLich.addspell(NecroUClDarkConduit, false)
 	TheLich.addspell(NecroDeathGrip, false)
 
@@ -507,6 +512,221 @@ EndFunction
 Function UnloadSpells()
 	NecroUCLIceCoffin.Unload()
 EndFunction
+
+Function Revert()
+  TheLich.SetGhost(True)
+  (NecroTrackingQuest as necrotrackingquestscript).LichfootCheck()
+  If (NecroTrackingQuest as necrotrackingquestscript).DLC1HasLightfoot == False
+    TheLich.RemovePerk(LightFoot)
+  EndIf
+  Float currHealth = TheLich.GetAV("health")
+  If currHealth <= 70 as Float
+    Debug.Trace("VAMPIRE: Player's health is only " + currHealth as String + "; restoring.", 0)
+    TheLich.RestoreAV("health", 70 as Float - currHealth)
+  EndIf
+  If NecroLichModelValue.GetValueInt() == 3
+    TheLich.RemoveItem(NecroLichSkinDragonPriest as Form, 1, True, None)
+  ElseIf NecroLichModelValue.GetValueInt() == 4
+    TheLich.RemoveItem(NecroLichSkinAyleid as Form, 1, True, None)
+  ElseIf NecroLichModelValue.GetValueInt() == 5
+    TheLich.RemoveItem(NecroLichSkinUnderking as Form, 1, True, None)
+  ElseIf NecroLichModelValue.GetValueInt() == 1
+    If NecroLichRaceValue.GetValueInt() == 0
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkin01 as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkin02 as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkin09 as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteFlesh as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkin09 as Form, 1, True, None)
+      EndIf
+    ElseIf NecroLichRaceValue.GetValueInt() == 1
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkinRedFlesh_Elf as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkinGreenFlesh_Elf as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkinBlackFlesh_Elf as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteFlesh_Elf as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkinBlackFlesh_Elf as Form, 1, True, None)
+      EndIf
+    ElseIf NecroLichRaceValue.GetValueInt() == 2
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkinRedFlesh_Orc as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkinGreenFlesh_Orc as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkinBlackFlesh_Orc as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteFlesh_Orc as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkinBlackFlesh_Orc as Form, 1, True, None)
+      EndIf
+    ElseIf NecroLichRaceValue.GetValueInt() == 3
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkinRedFlesh_Argonian as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkinGreenFlesh_Argonian as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkinBlackFlesh_Argonian as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteFlesh_Argonian as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkinBlackFlesh_Argonian as Form, 1, True, None)
+      EndIf
+    ElseIf NecroLichRaceValue.GetValueInt() == 4
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkinRedFlesh_Khajiit as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkinGreenFlesh_Khajiit as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkinBlackFlesh_Khajiit as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteFlesh_Khajiit as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkinBlackFlesh_Khajiit as Form, 1, True, None)
+      EndIf
+    EndIf
+  ElseIf NecroLichModelValue.GetValueInt() == 2
+    If NecroLichRaceValue.GetValueInt() == 0
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkin05 as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkin06 as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkin11 as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteSkel as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkin11 as Form, 1, True, None)
+      EndIf
+    ElseIf NecroLichRaceValue.GetValueInt() == 1
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkinRedSkel_Elf as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkinGreenSkel_Elf as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkinBlackSkel_Elf as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteSkel_Elf as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkinBlackSkel_Elf as Form, 1, True, None)
+      EndIf
+    ElseIf NecroLichRaceValue.GetValueInt() == 2
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkinRedSkel_Orc as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkinGreenSkel_Orc as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkinBlackSkel_Orc as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteSkel_Orc as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkinBlackSkel_Orc as Form, 1, True, None)
+      EndIf
+    ElseIf NecroLichRaceValue.GetValueInt() == 3
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkinRedSkel_Argonian as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkinGreenSkel_Argonian as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkinBlackSkel_Argonian as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteSkel_Argonian as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkinBlackSkel_Argonian as Form, 1, True, None)
+      EndIf
+    ElseIf NecroLichRaceValue.GetValueInt() == 4
+      If NecroLichColorValue.GetValueInt() == 1
+        TheLich.RemoveItem(NecroLichSkinRedSkel_Khajiit as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 2
+        TheLich.RemoveItem(NecroLichSkinGreenSkel_Khajiit as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 3
+        TheLich.RemoveItem(NecroLichSkinBlackSkel_Khajiit as Form, 1, True, None)
+      ElseIf NecroLichColorValue.GetValueInt() == 4
+        TheLich.RemoveItem(NecroLichSkinWhiteSkel_Khajiit as Form, 1, True, None)
+      Else
+        TheLich.RemoveItem(NecroLichSkinBlackSkel_Khajiit as Form, 1, True, None)
+      EndIf
+    EndIf
+  Else
+    TheLich.RemoveItem(NecroLichSkin11 as Form, 1, True, None)
+  EndIf
+  If NecroLichModelValue.GetValueInt() == 3
+    TheLich.RemoveItem(NecroLichSkinDragonPriest as Form, 1, True, None)
+  ElseIf NecroLichModelValue.GetValueInt() == 4
+    TheLich.RemoveItem(NecroLichSkinAyleid as Form, 1, True, None)
+  ElseIf NecroLichColorValue.GetValueInt() == 1 && NecroLichModelValue.GetValueInt() == 1
+    TheLich.RemoveItem(NecroLichSkin01 as Form, 1, True, None)
+  ElseIf NecroLichColorValue.GetValueInt() == 1 && NecroLichModelValue.GetValueInt() == 2
+    TheLich.RemoveItem(NecroLichSkin05 as Form, 1, True, None)
+  ElseIf NecroLichColorValue.GetValueInt() == 2 && NecroLichModelValue.GetValueInt() == 1
+    TheLich.RemoveItem(NecroLichSkin02 as Form, 1, True, None)
+  ElseIf NecroLichColorValue.GetValueInt() == 2 && NecroLichModelValue.GetValueInt() == 2
+    TheLich.RemoveItem(NecroLichSkin06 as Form, 1, True, None)
+  ElseIf NecroLichColorValue.GetValueInt() == 3 && NecroLichModelValue.GetValueInt() == 1
+    TheLich.RemoveItem(NecroLichSkin09 as Form, 1, True, None)
+  ElseIf NecroLichColorValue.GetValueInt() == 3 && NecroLichModelValue.GetValueInt() == 2
+    TheLich.RemoveItem(NecroLichSkin11 as Form, 1, True, None)
+  ElseIf NecroLichColorValue.GetValueInt() == 4 && NecroLichModelValue.GetValueInt() == 1
+    TheLich.RemoveItem(NecroLichSkinWhiteFlesh as Form, 1, True, None)
+  ElseIf NecroLichColorValue.GetValueInt() == 4 && NecroLichModelValue.GetValueInt() == 2
+    TheLich.RemoveItem(NecroLichSkinWhiteSkel as Form, 1, True, None)
+  ElseIf NecroLichModelValue.GetValueInt() == 1
+    TheLich.RemoveItem(NecroLichSkin09 as Form, 1, True, None)
+  Else
+    TheLich.RemoveItem(NecroLichSkin11 as Form, 1, True, None)
+  EndIf
+  DragonPriestEyeGlowFX.Stop(TheLich as ObjectReference)
+  DragonPriestParticlesFX.Stop(TheLich as ObjectReference)
+  FXfallingSandDragonPriestEffect.Stop(TheLich as ObjectReference)
+  TheLich.SetRace((NecroLichRitualQuest as necrolichtrackingquest).PlayerOriginalRace)
+  TheLich.RemoveSpell(NecroUCLEtherealAbility)
+  Spell right = TheLich.GetEquippedSpell(1)
+  If right == NecroDeathGrip
+    TheLich.UnequipSpell(right, 1)
+  EndIf
+  TheLich.RemoveSpell(LichAbility)
+  TheLich.RemoveSpell(NecroUClDarkConduit)
+  TheLich.RemoveSpell(NecroDeathGrip)
+
+  Game.EnablePlayerControls(False, False, True, False, False, False, False, False, 1)
+  Game.ShowFirstPersonGeometry(True)
+  TheLich.SetAttackActorOnSight(False)
+  HunterFaction.SetPlayerEnemy(False)
+  TheLich.RemoveFromFaction(LichFaction)
+  TheLich.RemoveFromFaction(DLC1PlayerVampireLordFaction)
+  If !TheLich.HasPerk(NecroUCLMasqueradePerk)
+    Game.SendWereWolfTransformation()
+  EndIf
+  TheLich.SetActorValue("health", PlayerHP)
+  TheLich.SetActorValue("Magicka", PlayerMG)
+  TheLich.SetActorValue("Stamina", PlayerST)
+  Transforming = False
+  Game.SetBeastForm(False)
+  Game.EnableFastTravel(True)
+  TheLich.SetGhost(False)
+  LichNecroCooldown.Cast(TheLich as ObjectReference, None)
+  If !TheLich.HasPerk(NecroUCLMasqueradePerk)
+    Int cfIndex = 0
+    While cfIndex < CrimeFactions.GetSize()
+      (CrimeFactions.GetAt(cfIndex) as Faction).SetPlayerEnemy(False)
+      cfIndex += 1
+    EndWhile
+  EndIf
+  Game.SetPlayerReportCrime(True)
+EndFunction
+
+Spell Property LichNecroCooldown Auto
+
+VisualEffect Property DragonPriestParticlesFX Auto
+VisualEffect Property DragonPriestEyeGlowFX Auto
+VisualEffect Property FXfallingSandDragonPriestEffect Auto
 
 Spell Property NecroUCLIceCoffin Auto
 Spell Property NecroUClDarkConduit Auto
